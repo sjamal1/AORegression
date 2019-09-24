@@ -9,6 +9,18 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "CreateWF_ID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AAR9T4KC70A62umIBeIlToSvaLz3kgApc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "Test",
           "scope": "local",
           "name": "VariableToSet",
@@ -404,10 +416,9 @@
     ],
     "properties": {
       "atomic": {
-        "atomic_group": "Shams",
-        "is_atomic": true
+        "is_atomic": false
       },
-      "delete_workflow_instance": true,
+      "delete_workflow_instance": false,
       "display_name": "RegressionToCreateCoreWF",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -1048,6 +1059,90 @@
             ]
           }
         ]
+      },
+      {
+        "unique_name": "definition_activity_01ABDC82B1TWV0CIWTOIUiQQtMjcM32FsJk",
+        "name": "Generic CCS API Request",
+        "title": "RunWorkflow",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "POST",
+          "continue_on_failure": false,
+          "display_name": "RunWorkflow",
+          "relative_url": "be-console/api/v1/workflows/ui/start?workflow_id=$activity.definition_activity_01A7MSPSEV5XM0g1rxpmW5uh4jtT2MnnzIC.output.jsonpath_queries.workflow_id$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ABJN8GJ8VBS2yulXzhKDRY5Q0rFBbLmi9",
+        "name": "JSONPath Query",
+        "title": "ExtractWFRunID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "ExtractWFRunID",
+          "input_json": "$activity.definition_activity_01ABDC82B1TWV0CIWTOIUiQQtMjcM32FsJk.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$..id",
+              "jsonpath_query_name": "runWFID",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ABK1T74R1J36uw9fi5xljehXyWTMftjfE",
+        "name": "Sleep",
+        "title": "waitToGetAllActionInstances",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "waitToGetAllActionInstances",
+          "skip_execution": false,
+          "sleep_interval": 30
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ABJH9TY01GF5TtTssTVcUK6JEeExKG82o",
+        "name": "Generic CCS API Request",
+        "title": "WorkflowRunInstance",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "GET",
+          "continue_on_failure": false,
+          "display_name": "WorkflowRunInstance",
+          "relative_url": "be-console/api/v1/instances/$activity.definition_activity_01ABJN8GJ8VBS2yulXzhKDRY5Q0rFBbLmi9.output.jsonpath_queries.runWFID$?detailed=false",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
@@ -1104,14 +1199,14 @@
       "columns": [
         {
           "is_required": true,
-          "name": "ActivityJSON",
-          "title": "UpdateJSON",
+          "name": "ActivityName",
+          "title": "Activity",
           "type": "string"
         },
         {
           "is_required": true,
-          "name": "ActivityName",
-          "title": "Activity",
+          "name": "ActivityJSON",
+          "title": "UpdateJSON",
           "type": "string"
         }
       ],

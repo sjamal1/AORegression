@@ -9,6 +9,52 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "CreateWF_ID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Test",
+          "scope": "local",
+          "name": "VariableToSet",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
+        "properties": {
+          "scope": "local",
+          "name": "InstanceID",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
+        "properties": {
+          "scope": "local",
+          "name": "TestSuccessTable",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "be-console/api/v1/schemas/core",
           "scope": "local",
           "name": "actionSchemaUrl",
@@ -150,64 +196,6 @@
         },
         "unique_name": "variable_workflow_01AC7OPPBOTEY2oSHNgC4VWo3Pvx9QUlIwr",
         "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "CreateWF_ID",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Test",
-          "scope": "local",
-          "name": "VariableToSet",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "InputVariable",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBOIAN65DoblZNLxARqyPL610plw",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
-        "properties": {
-          "scope": "local",
-          "name": "InstanceID",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
-        "properties": {
-          "scope": "local",
-          "name": "TestSuccessTable",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
-        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -215,6 +203,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "This workflow creates a new workflow with all core activities. It validates and executes the workflow and saves pass / fail  statuses",
       "display_name": "RegressionToCreateCoreWF_New",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -284,7 +273,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "api_body": "{\n  \"schema_id\": \"$activity.definition_activity_01AC7OQEB7F1K07A9a1UhgDU5AmcjInAsov.output.jsonpath_queries.wf_schemaID$\",\n  \"name\": \"$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.input.variable_workflow_01AC7OPPBOIAN65DoblZNLxARqyPL610plw$\",\n  \"properties\": {\n    \"display_name\": \"$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.input.variable_workflow_01AC7OPPBOIAN65DoblZNLxARqyPL610plw$\",\n    \"atomic\": {\n      \"is_atomic\": false\n    },\n    \"delete_workflow_instance\": false,\n    \"runtime_user\": {\n      \"override_target_runtime_user\": false,\n      \"specify_on_workflow_start\": false,\n      \"target_default\": true\n    },\n    \"target\": {\n      \"execute_on_target_group\": false,\n      \"execute_on_workflow_target\": false,\n      \"no_target\": true,\n      \"specify_on_workflow_start\": false\n    },\n    \"owner\": \"system\"\n  }\n}",
+          "api_body": "{\n  \"schema_id\": \"$activity.definition_activity_01AC7OQEB7F1K07A9a1UhgDU5AmcjInAsov.output.jsonpath_queries.wf_schemaID$\",\n  \"name\": \"Core Actions Worflow $activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.start_time$\",\n  \"properties\": {\n    \"display_name\": \"Core Actions Worflow $activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.start_time$\",\n    \"atomic\": {\n      \"is_atomic\": false\n    },\n    \"delete_workflow_instance\": false,\n    \"runtime_user\": {\n      \"override_target_runtime_user\": false,\n      \"specify_on_workflow_start\": false,\n      \"target_default\": true\n    },\n    \"target\": {\n      \"execute_on_target_group\": false,\n      \"execute_on_workflow_target\": false,\n      \"no_target\": true,\n      \"specify_on_workflow_start\": false\n    },\n    \"owner\": \"system\"\n  }\n}",
           "api_call_method": "POST",
           "continue_on_failure": false,
           "display_name": "CreateGenericWF",
@@ -1130,7 +1119,7 @@
           "continue_on_failure": false,
           "display_name": "EmailSuccessDataToRecipients",
           "from": "jamaltest12@gmail.com",
-          "html": true,
+          "html": false,
           "runtime_user": {
             "override_target_runtime_user": true,
             "runtime_user_id": "definition_runtime_user_01ACE6ZMLUMO25SIMY6SfqknyD5v1kge0T6"

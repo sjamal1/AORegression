@@ -7,30 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "CreateWF_ID",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Test",
-          "scope": "local",
-          "name": "VariableToSet",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
         "properties": {
           "scope": "local",
@@ -50,6 +26,17 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
+        "properties": {
+          "scope": "local",
+          "name": "Results",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8",
         "object_type": "variable_workflow"
       },
       {
@@ -196,6 +183,30 @@
         },
         "unique_name": "variable_workflow_01AC7OPPBOTEY2oSHNgC4VWo3Pvx9QUlIwr",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "CreateWF_ID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Test",
+          "scope": "local",
+          "name": "VariableToSet",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -203,7 +214,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "description": "This workflow creates a new workflow with all core activities. It validates and executes the workflow and saves pass / fail  statuses",
+      "description": "This workflow creates a new workflow with all core activities. It validates and executes the workflow and saves pass / fail  statuses and finally deletes the workflow",
       "display_name": "RegressionToCreateCoreWF_New",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -1108,6 +1119,269 @@
         "object_type": "definition_activity"
       },
       {
+        "unique_name": "definition_activity_01AHCRTZV2JDL0AfiN9wZqnVQCBziMQnjz5",
+        "name": "Replace String",
+        "title": "CreateSuccessDataJSON",
+        "type": "core.replacestring",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "CreateSuccessDataJSON",
+          "input_string": "$activity.definition_activity_01ACEV8L9WX8U3YGs6r9d7C53FZmPoQjUou.output.result_string$",
+          "replace_list": [
+            {
+              "replaced_string": "   =true\"",
+              "replacement_string": "\",\"status\": true"
+            },
+            {
+              "replaced_string": "[",
+              "replacement_string": "{ \"core\": ["
+            },
+            {
+              "replaced_string": "]",
+              "replacement_string": "]}"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01AHEZN4NBIZU7foR0y8RTnrDNPMbIB9KCD",
+        "name": "For Each",
+        "title": "For Each",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For Each",
+          "skip_execution": false,
+          "source_array": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AC7OPPBOTEY2oSHNgC4VWo3Pvx9QUlIwr$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX",
+            "name": "JSONPath Query",
+            "title": "Extract Status",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Extract Status",
+              "input_json": "$activity.definition_activity_01AHCRTZV2JDL0AfiN9wZqnVQCBziMQnjz5.output.result_string$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..core[?(@.InstanceID== '$activity.definition_activity_01AHEZN4NBIZU7foR0y8RTnrDNPMbIB9KCD.input.source_array[@].ActivityName$')].status",
+                  "jsonpath_query_name": "Status",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01AHF52PKP9QQ1cjgQ7i3E4gX9Wx3yNg4nt",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01AHF52T0V63Z3LUZsGKCLrXQS4JXaLFnBr",
+                "name": "Condition Branch",
+                "title": "If Status = True",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
+                    "operator": "eq",
+                    "right_operand": "true"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "If Status = True",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01AHFAIVYWG1339hCLjBFP9AkjIKRedTkUH",
+                    "name": "Replace String",
+                    "title": "Set True To Pass",
+                    "type": "core.replacestring",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Set True To Pass",
+                      "input_string": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
+                      "replace_list": [
+                        {
+                          "replaced_string": "true",
+                          "replacement_string": "PASS"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01AHDJHQDPO3E2VQD4gqmksrwXqY2DDLcg9",
+                    "name": "Add Row to Table",
+                    "title": "Add Status To Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Add Status To Table",
+                      "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
+                      "row": [
+                        {
+                          "key": "ActivityName",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01AHEZN4NBIZU7foR0y8RTnrDNPMbIB9KCD.input.source_array[@].ActivityName$"
+                        },
+                        {
+                          "key": "Status",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01AHFAIVYWG1339hCLjBFP9AkjIKRedTkUH.output.result_string$"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01AHF52UD0FZP1he25pkqrMaVXDn5cRK2bY",
+                "name": "Condition Branch",
+                "title": "If Status = False",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
+                    "operator": "eq",
+                    "right_operand": "false"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "If Status = False",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01AHFARSMLMQH2YUFYo2yu4DoUm3djtqZrZ",
+                    "name": "Replace String",
+                    "title": "Set False to Fail",
+                    "type": "core.replacestring",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Set False to Fail",
+                      "input_string": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
+                      "replace_list": [
+                        {
+                          "replaced_string": "false",
+                          "replacement_string": "FAIL"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01AHFGTIOUNSP74amiuDLF6lfT10QWdbSTj",
+                    "name": "Add Row to Table",
+                    "title": "Add Status to Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Add Status to Table",
+                      "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
+                      "row": [
+                        {
+                          "key": "ActivityName",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01AHEZN4NBIZU7foR0y8RTnrDNPMbIB9KCD.input.source_array[@].ActivityName$"
+                        },
+                        {
+                          "key": "Status",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01AHFARSMLMQH2YUFYo2yu4DoUm3djtqZrZ.output.result_string$"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01AHGHF9N6GDZ2e5PCVQ9p5Tfme51pah0qz",
+        "name": "Generic CCS API Request",
+        "title": "DeleteTheWorkflowRun",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "DELETE",
+          "continue_on_failure": false,
+          "display_name": "DeleteTheWorkflowRun",
+          "relative_url": "be-console/api/v1/instances/$activity.definition_activity_01AC7OYR2YJAE3qU0ICPbIOTVj2pfKXiOfc.output.jsonpath_queries.runWFID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01AHGO7MAD5M62yzvb8UMqqwFMUGBQ11y7F",
+        "name": "Generic CCS API Request",
+        "title": "DeleteTheWorkflow",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "DELETE",
+          "continue_on_failure": false,
+          "display_name": "DeleteTheWorkflow",
+          "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_01ACDUKTONC3R2lVNsBCmtXSMErnorJyGaI",
         "name": "Send Email",
         "title": "EmailSuccessDataToRecipients",
@@ -1115,7 +1389,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "body": "$activity.definition_activity_01ACEV8L9WX8U3YGs6r9d7C53FZmPoQjUou.output.result_string$",
+          "body": "$activity.definition_activity_01AHCRTZV2JDL0AfiN9wZqnVQCBziMQnjz5.output.result_string$",
           "continue_on_failure": false,
           "display_name": "EmailSuccessDataToRecipients",
           "from": "jamaltest12@gmail.com",
@@ -1124,7 +1398,7 @@
             "override_target_runtime_user": true,
             "runtime_user_id": "definition_runtime_user_01ACE6ZMLUMO25SIMY6SfqknyD5v1kge0T6"
           },
-          "skip_execution": false,
+          "skip_execution": true,
           "subject": "Core_Actions_Regression_Status",
           "target": {
             "override_workflow_target": true,
@@ -1213,6 +1487,25 @@
         {
           "name": "InstanceID",
           "title": "InstanceID",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK": {
+      "unique_name": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
+      "data_type": "datatype.tabletype",
+      "display_name": "Results_Table",
+      "columns": [
+        {
+          "name": "ActivityName",
+          "title": "ActivityName",
+          "type": "string"
+        },
+        {
+          "name": "Status",
+          "title": "Status",
           "type": "string"
         }
       ],

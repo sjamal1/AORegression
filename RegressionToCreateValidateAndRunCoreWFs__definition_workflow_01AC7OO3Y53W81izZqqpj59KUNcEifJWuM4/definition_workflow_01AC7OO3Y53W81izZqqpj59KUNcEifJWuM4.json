@@ -7,25 +7,15 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
+        "schema_id": "datatype.string",
         "properties": {
+          "value": "be-console/api/v1/schemas/core",
           "scope": "local",
-          "name": "InstanceID",
-          "type": "datatype.table",
+          "name": "actionSchemaUrl",
+          "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
-        "properties": {
-          "scope": "local",
-          "name": "TestSuccessTable",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
+        "unique_name": "variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi",
         "object_type": "variable_workflow"
       },
       {
@@ -42,13 +32,49 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "be-console/api/v1/schemas/core",
-          "scope": "local",
-          "name": "actionSchemaUrl",
+          "value": "",
+          "scope": "output",
+          "name": "JSON_Output",
           "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi",
+        "unique_name": "variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "CreateWF_ID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Test",
+          "scope": "local",
+          "name": "VariableToSet",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Debug - True / False: If True the Workflow will not be deleted",
+          "type": "datatype.boolean",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
         "object_type": "variable_workflow"
       },
       {
@@ -185,27 +211,25 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
         "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "CreateWF_ID",
-          "type": "datatype.string",
+          "scope": "local",
+          "name": "InstanceID",
+          "type": "datatype.table",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
         "properties": {
-          "value": "Test",
           "scope": "local",
-          "name": "VariableToSet",
-          "type": "datatype.string",
+          "name": "TestSuccessTable",
+          "type": "datatype.table",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
+        "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
         "object_type": "variable_workflow"
       }
     ],
@@ -214,7 +238,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "description": "This workflow creates a new workflow with all core activities. It validates and executes the workflow and saves pass / fail  statuses and finally deletes the workflow",
+      "description": "This workflow creates a new workflow with all core activities. It validates and executes the workflow and saves pass / fail  statuses and deletes the workflow if the debug = false",
       "display_name": "RegressionToCreateCoreWF_New",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -1334,50 +1358,112 @@
         ]
       },
       {
-        "unique_name": "definition_activity_01AHGHF9N6GDZ2e5PCVQ9p5Tfme51pah0qz",
-        "name": "Generic CCS API Request",
-        "title": "DeleteTheWorkflowRun",
-        "type": "ccs.api_request",
+        "unique_name": "definition_activity_01AHK2F3B7MMS4QLPrsPoohspf9SbWdeaPM",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
         "base_type": "activity",
         "properties": {
-          "action_timeout": 180,
-          "api_call_method": "DELETE",
           "continue_on_failure": false,
-          "display_name": "DeleteTheWorkflowRun",
-          "relative_url": "be-console/api/v1/instances/$activity.definition_activity_01AC7OYR2YJAE3qU0ICPbIOTVj2pfKXiOfc.output.jsonpath_queries.runWFID$",
-          "runtime_user": {
-            "override_target_runtime_user": false,
-            "target_default": true
-          },
-          "skip_execution": false,
-          "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
-          }
+          "display_name": "Condition Block",
+          "skip_execution": false
         },
-        "object_type": "definition_activity"
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01AHK2F6KZGRW46ngIhor0zXYlBVr1o9BsM",
+            "name": "Condition Branch",
+            "title": "If Debug is False",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.input.variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF$",
+                  "operator": "eq",
+                  "right_operand": false
+                },
+                "operator": "or",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01AC7OWYHUC9X1cQ2v8WStNNFSvUsX8De6Z.output.jsonpath_queries.workflow_valid$",
+                  "operator": "eq",
+                  "right_operand": "true"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "If Debug is False",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01AHGHF9N6GDZ2e5PCVQ9p5Tfme51pah0qz",
+                "name": "Generic CCS API Request",
+                "title": "DeleteTheWorkflowRun",
+                "type": "ccs.api_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "api_call_method": "DELETE",
+                  "continue_on_failure": false,
+                  "display_name": "DeleteTheWorkflowRun",
+                  "relative_url": "be-console/api/v1/instances/$activity.definition_activity_01AC7OYR2YJAE3qU0ICPbIOTVj2pfKXiOfc.output.jsonpath_queries.runWFID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01AHGO7MAD5M62yzvb8UMqqwFMUGBQ11y7F",
+                "name": "Generic CCS API Request",
+                "title": "DeleteTheWorkflow",
+                "type": "ccs.api_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "api_call_method": "DELETE",
+                  "continue_on_failure": false,
+                  "display_name": "DeleteTheWorkflow",
+                  "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
       },
       {
-        "unique_name": "definition_activity_01AHGO7MAD5M62yzvb8UMqqwFMUGBQ11y7F",
-        "name": "Generic CCS API Request",
-        "title": "DeleteTheWorkflow",
-        "type": "ccs.api_request",
+        "unique_name": "definition_activity_01AHKPRPIU02Q5CGCdEgfVPmYywCPcIixew",
+        "name": "Set Variables",
+        "title": "Output JSON Status for Summary",
+        "type": "core.set_multiple_variables",
         "base_type": "activity",
         "properties": {
-          "action_timeout": 180,
-          "api_call_method": "DELETE",
           "continue_on_failure": false,
-          "display_name": "DeleteTheWorkflow",
-          "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$",
-          "runtime_user": {
-            "override_target_runtime_user": false,
-            "target_default": true
-          },
+          "display_name": "Output JSON Status for Summary",
           "skip_execution": false,
-          "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
-          }
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX$",
+              "variable_value_new": "$activity.definition_activity_01AHCRTZV2JDL0AfiN9wZqnVQCBziMQnjz5.output.result_string$"
+            }
+          ]
         },
         "object_type": "definition_activity"
       },

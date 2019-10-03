@@ -9,53 +9,6 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "be-console/api/v1/schemas/core",
-          "scope": "local",
-          "name": "actionSchemaUrl",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
-        "properties": {
-          "scope": "local",
-          "name": "Results",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "JSON_Output",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "CreateWF_ID",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "Test",
           "scope": "local",
           "name": "VariableToSet",
@@ -66,15 +19,14 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
         "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug - True / False: If True the Workflow will not be deleted",
-          "type": "datatype.boolean",
+          "scope": "output",
+          "name": "Results",
+          "type": "datatype.table",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
+        "unique_name": "variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8",
         "object_type": "variable_workflow"
       },
       {
@@ -230,6 +182,54 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "CreateWF_ID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "be-console/api/v1/schemas/core",
+          "scope": "local",
+          "name": "actionSchemaUrl",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "JSON_Output",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Debug - True / False: If True the Workflow will not be deleted",
+          "type": "datatype.boolean",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
         "object_type": "variable_workflow"
       }
     ],
@@ -1240,17 +1240,17 @@
                   {
                     "unique_name": "definition_activity_01AHFAIVYWG1339hCLjBFP9AkjIKRedTkUH",
                     "name": "Replace String",
-                    "title": "Set True To Pass",
+                    "title": "Set True To True",
                     "type": "core.replacestring",
                     "base_type": "activity",
                     "properties": {
                       "continue_on_failure": false,
-                      "display_name": "Set True To Pass",
+                      "display_name": "Set True To True",
                       "input_string": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
                       "replace_list": [
                         {
                           "replaced_string": "true",
-                          "replacement_string": "PASS"
+                          "replacement_string": "true"
                         }
                       ],
                       "skip_execution": false
@@ -1267,7 +1267,7 @@
                       "action_timeout": 180,
                       "continue_on_failure": false,
                       "display_name": "Add Status To Table",
-                      "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
+                      "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
                       "row": [
                         {
                           "key": "ActivityName",
@@ -1307,17 +1307,17 @@
                   {
                     "unique_name": "definition_activity_01AHFARSMLMQH2YUFYo2yu4DoUm3djtqZrZ",
                     "name": "Replace String",
-                    "title": "Set False to Fail",
+                    "title": "Set False to False",
                     "type": "core.replacestring",
                     "base_type": "activity",
                     "properties": {
                       "continue_on_failure": false,
-                      "display_name": "Set False to Fail",
+                      "display_name": "Set False to False",
                       "input_string": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
                       "replace_list": [
                         {
                           "replaced_string": "false",
-                          "replacement_string": "FAIL"
+                          "replacement_string": "false"
                         }
                       ],
                       "skip_execution": false
@@ -1334,7 +1334,7 @@
                       "action_timeout": 180,
                       "continue_on_failure": false,
                       "display_name": "Add Status to Table",
-                      "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
+                      "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
                       "row": [
                         {
                           "key": "ActivityName",

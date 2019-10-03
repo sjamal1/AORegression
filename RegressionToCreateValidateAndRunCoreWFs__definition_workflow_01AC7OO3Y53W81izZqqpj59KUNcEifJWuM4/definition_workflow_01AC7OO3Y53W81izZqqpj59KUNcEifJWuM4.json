@@ -9,18 +9,6 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Test",
-          "scope": "local",
-          "name": "VariableToSet",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "be-console/api/v1/schemas/core",
           "scope": "local",
           "name": "actionSchemaUrl",
@@ -35,22 +23,22 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "JSON_Output",
+          "name": "CreateWF_ID",
           "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX",
+        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
         "properties": {
           "scope": "local",
-          "name": "InstanceID",
+          "name": "TestSuccessTable",
           "type": "datatype.table",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
+        "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
         "object_type": "variable_workflow"
       },
       {
@@ -198,14 +186,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
+        "schema_id": "datatype.string",
         "properties": {
-          "scope": "local",
-          "name": "TestSuccessTable",
-          "type": "datatype.table",
+          "value": "",
+          "scope": "output",
+          "name": "JSON_Output",
+          "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
+        "unique_name": "variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX",
         "object_type": "variable_workflow"
       },
       {
@@ -221,15 +210,26 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug - True / False: If True the Workflow will not be deleted",
-          "type": "datatype.boolean",
+          "value": "Test",
+          "scope": "local",
+          "name": "VariableToSet",
+          "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
+        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
+        "properties": {
+          "scope": "local",
+          "name": "InstanceID",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
         "object_type": "variable_workflow"
       },
       {
@@ -245,15 +245,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.boolean",
         "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "CreateWF_ID",
-          "type": "datatype.string",
+          "value": false,
+          "scope": "input",
+          "name": "Debug - True / False: If True the Workflow will not be deleted",
+          "type": "datatype.boolean",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
         "object_type": "variable_workflow"
       }
     ],
@@ -1528,33 +1528,6 @@
           ]
         },
         "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_01ACDUKTONC3R2lVNsBCmtXSMErnorJyGaI",
-        "name": "Send Email",
-        "title": "EmailSuccessDataToRecipients",
-        "type": "email.smtp_send_email",
-        "base_type": "activity",
-        "properties": {
-          "action_timeout": 180,
-          "body": "$activity.definition_activity_01AHCRTZV2JDL0AfiN9wZqnVQCBziMQnjz5.output.result_string$",
-          "continue_on_failure": false,
-          "display_name": "EmailSuccessDataToRecipients",
-          "from": "jamaltest12@gmail.com",
-          "html": false,
-          "runtime_user": {
-            "override_target_runtime_user": true,
-            "runtime_user_id": "definition_runtime_user_01ACE6ZMLUMO25SIMY6SfqknyD5v1kge0T6"
-          },
-          "skip_execution": true,
-          "subject": "Core_Actions_Regression_Status",
-          "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01ACE80YTAPCS77Be9tG5muCWtheVl6ozI7"
-          },
-          "to": "shajamal@cisco.com"
-        },
-        "object_type": "definition_activity"
       }
     ],
     "categories": [
@@ -1570,39 +1543,6 @@
       "base_type": "category",
       "category_type": "custom",
       "object_type": "category"
-    }
-  },
-  "targets": {
-    "definition_target_01ACE80YTAPCS77Be9tG5muCWtheVl6ozI7": {
-      "unique_name": "definition_target_01ACE80YTAPCS77Be9tG5muCWtheVl6ozI7",
-      "name": "ShamsSMTP",
-      "title": "ShamsSMTP",
-      "type": "email.smtp_endpoint",
-      "base_type": "target",
-      "object_type": "definition_target",
-      "properties": {
-        "default_runtime_user_id": "definition_runtime_user_01ACE6ZMLUMO25SIMY6SfqknyD5v1kge0T6",
-        "display_name": "ShamsSMTP",
-        "no_runtime_user": false,
-        "port": 587,
-        "protocol": "SMTP",
-        "server": "smtp.gmail.com"
-      }
-    }
-  },
-  "runtime_users": {
-    "definition_runtime_user_01ACE6ZMLUMO25SIMY6SfqknyD5v1kge0T6": {
-      "unique_name": "definition_runtime_user_01ACE6ZMLUMO25SIMY6SfqknyD5v1kge0T6",
-      "name": "ShamsEmail",
-      "title": "ShamsEmail",
-      "type": "runtime_user.email_credentials",
-      "base_type": "runtime_user",
-      "object_type": "definition_runtime_user",
-      "properties": {
-        "display_name": "ShamsEmail",
-        "password": "*****",
-        "sender": "*****"
-      }
     }
   },
   "table_types": {
@@ -1647,13 +1587,13 @@
       "display_name": "Results_Table",
       "columns": [
         {
-          "name": "ActivityName",
-          "title": "ActivityName",
+          "name": "Status",
+          "title": "Status",
           "type": "string"
         },
         {
-          "name": "Status",
-          "title": "Status",
+          "name": "ActivityName",
+          "title": "ActivityName",
           "type": "string"
         }
       ],

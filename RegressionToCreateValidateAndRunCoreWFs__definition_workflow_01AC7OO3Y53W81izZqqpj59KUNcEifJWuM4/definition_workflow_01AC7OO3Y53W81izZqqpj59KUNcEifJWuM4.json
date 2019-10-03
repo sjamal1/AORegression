@@ -9,24 +9,49 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "Test",
-          "scope": "local",
-          "name": "VariableToSet",
+          "value": "",
+          "scope": "output",
+          "name": "Output Results String",
           "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
+        "unique_name": "variable_workflow_01AJ521AVTXNE7ZxaFHyix5fAvRoLiUY9PB",
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
+        "schema_id": "datatype.string",
         "properties": {
+          "value": "",
           "scope": "output",
-          "name": "Results",
-          "type": "datatype.table",
+          "name": "JSON_Output",
+          "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8",
+        "unique_name": "variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "DeleteVariableStatus",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AJ5OW3VX1VM7CEmRPK3BHE3DeX5DzXY3u",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "be-console/api/v1/schemas/core",
+          "scope": "local",
+          "name": "actionSchemaUrl",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi",
         "object_type": "variable_workflow"
       },
       {
@@ -163,6 +188,30 @@
         "object_type": "variable_workflow"
       },
       {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "CreateWF_ID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Debug - True / False: If True the Workflow will not be deleted",
+          "type": "datatype.boolean",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
         "properties": {
           "scope": "local",
@@ -185,51 +234,26 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
         "properties": {
-          "value": "",
           "scope": "output",
-          "name": "CreateWF_ID",
-          "type": "datatype.string",
+          "name": "Results",
+          "type": "datatype.table",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
+        "unique_name": "variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "be-console/api/v1/schemas/core",
+          "value": "Test",
           "scope": "local",
-          "name": "actionSchemaUrl",
+          "name": "VariableToSet",
           "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "JSON_Output",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug - True / False: If True the Workflow will not be deleted",
-          "type": "datatype.boolean",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
+        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
         "object_type": "variable_workflow"
       }
     ],
@@ -263,7 +287,7 @@
         "properties": {
           "action_timeout": 180,
           "api_call_method": "GET",
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "GetWFSchemaID",
           "relative_url": "be-console/api/v1/schemas/generic.workflow?schema_type=view",
           "runtime_user": {
@@ -286,7 +310,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "ExtractWFSchemaID",
           "input_json": "$activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.response_body$",
           "jsonpath_queries": [
@@ -310,7 +334,7 @@
           "action_timeout": 180,
           "api_body": "{\n  \"schema_id\": \"$activity.definition_activity_01AC7OQEB7F1K07A9a1UhgDU5AmcjInAsov.output.jsonpath_queries.wf_schemaID$\",\n  \"name\": \"Core Actions Worflow $activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.start_time$\",\n  \"properties\": {\n    \"display_name\": \"Core Actions Worflow $activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.start_time$\",\n    \"atomic\": {\n      \"is_atomic\": false\n    },\n    \"delete_workflow_instance\": false,\n    \"runtime_user\": {\n      \"override_target_runtime_user\": false,\n      \"specify_on_workflow_start\": false,\n      \"target_default\": true\n    },\n    \"target\": {\n      \"execute_on_target_group\": false,\n      \"execute_on_workflow_target\": false,\n      \"no_target\": true,\n      \"specify_on_workflow_start\": false\n    },\n    \"owner\": \"system\"\n  }\n}",
           "api_call_method": "POST",
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "CreateGenericWF",
           "relative_url": "be-console/api/v1/workflows",
           "runtime_user": {
@@ -333,7 +357,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "ExtractWF_ID",
           "input_json": "$activity.definition_activity_01AC7OQRPZNFS40ZHa6eSMQlVRuPRDSDrtp.output.response_body$",
           "jsonpath_queries": [
@@ -356,7 +380,7 @@
         "properties": {
           "action_timeout": 180,
           "api_call_method": "GET",
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "GetStringVariableJSON",
           "relative_url": "be-console/api/v1/schemas?schema_type=view\u0026base_type=datatype\u0026variable_type=true",
           "runtime_user": {
@@ -379,7 +403,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "ExtractStringVariableSchemaID",
           "input_json": "$activity.definition_activity_01AC7ORFJTKVU0sGiYarGZODLEPHjZYdwI6.output.response_body$",
           "jsonpath_queries": [
@@ -403,7 +427,7 @@
           "action_timeout": 180,
           "api_body": "{\"variables\": [\n    {\n      \"schema_id\": \"$activity.definition_activity_01AC7ORQCKRDR0HxNAdoEWq21QkwaJv0axE.output.jsonpath_queries.StringSchemaID$\",\n      \"title\": \"TestVar\",\n      \"properties\": {\n        \"scope\": \"static\",\n        \"is_required\": false,\n        \"name\": \"TestVar\",\n        \"value\": \"This is A test\"\n      }\n    }\n  ]\n}",
           "api_call_method": "PUT",
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "CreateLocalStringVariable",
           "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$",
           "runtime_user": {
@@ -426,7 +450,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "GetStringVariableID",
           "input_json": "$activity.definition_activity_01AC7OS1YBJF83b8uJEJsR8uoOQrJbKHb2D.output.response_body$",
           "jsonpath_queries": [
@@ -447,7 +471,7 @@
         "type": "core.replacestring",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "CreatePayloadJSONForSetVar",
           "input_string": "{\n\"id\": \"\",\n\"title\": \"Set Variables\",\n\"properties\": {\n\"continue_on_failure\": false,\n\"display_name\": \"Set Variables\",\n\"skip_execution\": false,\n\"variables_to_update\": [\n{\n\"variable_to_update\": \"$Variable1.static.Variable2$\",\n\"variable_value_new\": \"This is a Test\"\n}\n]\n}\n}",
           "replace_list": [
@@ -482,7 +506,7 @@
               "column_type": "string"
             }
           ],
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "UpdateRowForSetVar",
           "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AC7OPPBOTEY2oSHNgC4VWo3Pvx9QUlIwr$",
           "row": [
@@ -512,7 +536,7 @@
         "type": "logic.for_each",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "For Each",
           "skip_execution": false,
           "source_array": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AC7OPPBOTEY2oSHNgC4VWo3Pvx9QUlIwr$"
@@ -526,7 +550,7 @@
             "type": "core.set_multiple_variables",
             "base_type": "activity",
             "properties": {
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "ResetActionSchemaUrlVar",
               "skip_execution": false,
               "variables_to_update": [
@@ -545,7 +569,7 @@
             "type": "logic.if_else",
             "base_type": "activity",
             "properties": {
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "CheckIfJAVACore",
               "skip_execution": false
             },
@@ -563,7 +587,7 @@
                     "operator": "ne",
                     "right_operand": "jsonpathquery"
                   },
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "IfStringNotJSONPath",
                   "skip_execution": false
                 },
@@ -576,7 +600,7 @@
                     "type": "core.set_multiple_variables",
                     "base_type": "activity",
                     "properties": {
-                      "continue_on_failure": false,
+                      "continue_on_failure": true,
                       "display_name": "SetActionSchemaUrlToCore",
                       "skip_execution": false,
                       "variables_to_update": [
@@ -602,7 +626,7 @@
                     "operator": "eq",
                     "right_operand": "jsonpathquery"
                   },
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "IfStringJSONPath",
                   "skip_execution": false
                 },
@@ -615,7 +639,7 @@
                     "type": "core.set_multiple_variables",
                     "base_type": "activity",
                     "properties": {
-                      "continue_on_failure": false,
+                      "continue_on_failure": true,
                       "display_name": "SetActionSchemaToCoreJava",
                       "skip_execution": false,
                       "variables_to_update": [
@@ -640,7 +664,7 @@
             "properties": {
               "action_timeout": 180,
               "api_call_method": "GET",
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "GetCoreActionsSchema",
               "relative_url": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi$",
               "runtime_user": {
@@ -663,7 +687,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "ExtractCoreActionSchemaID",
               "input_json": "$activity.definition_activity_01AC7OUWAMH3X2ib2RI89j5y2oRA3osM82E.output.response_body$",
               "jsonpath_queries": [
@@ -687,7 +711,7 @@
               "action_timeout": 180,
               "api_body": "{\n  \"previous_action\": {\n    \"id\": \"$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$\"\n  },\n  \"action\": {\n    \"schema_id\": \"$activity.definition_activity_01AC7OV8BMRUM29MCWxHEHeK2ZbBuZW6fT0.output.jsonpath_queries.core_action_schemaID$\",\n    \"type\": \"core.$activity.definition_activity_01AC7OT8CMGYD2rR1N9X5Jl576CTL1rgKor.input.source_array[@].ActivityName$\",\n    \"base_type\": \"activity\",\n    \"name\": \"$activity.definition_activity_01AC7OT8CMGYD2rR1N9X5Jl576CTL1rgKor.input.source_array[@].ActivityName$\",\n    \"properties\": {\n      \"continue_on_failure\": false,\n      \"skip_execution\": false,\n      \"display_name\": \"$activity.definition_activity_01AC7OT8CMGYD2rR1N9X5Jl576CTL1rgKor.input.source_array[@].ActivityName$\"\n    },\n    \"title\": \"$activity.definition_activity_01AC7OT8CMGYD2rR1N9X5Jl576CTL1rgKor.input.source_array[@].ActivityName$\"\n  }\n}",
               "api_call_method": "POST",
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "CreateCoreAction",
               "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$/actions",
               "runtime_user": {
@@ -710,7 +734,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "ExtractingCoreActionID",
               "input_json": "$activity.definition_activity_01AC7OVK3FG0L5suMeQI0Kmb0cTZzX1LOba.output.response_body$",
               "jsonpath_queries": [
@@ -734,7 +758,7 @@
               "action_timeout": 180,
               "api_body": "$activity.definition_activity_01AC7OT8CMGYD2rR1N9X5Jl576CTL1rgKor.input.source_array[@].ActivityJSON$",
               "api_call_method": "PUT",
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "UpdateActions",
               "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$/actions/$activity.definition_activity_01AC7OVYD09MV1XsT6mSy37AToljtP1RYYv.output.jsonpath_queries.CoreActionID$",
               "runtime_user": {
@@ -760,7 +784,7 @@
         "properties": {
           "action_timeout": 180,
           "api_call_method": "POST",
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "ValidateWorkflow",
           "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$/validate",
           "runtime_user": {
@@ -783,7 +807,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "ExtractValidationResponse",
           "input_json": "$activity.definition_activity_01AC7OWMSX7OV0wuIlifMA55iVinTQMPW2H.output.response_body$",
           "jsonpath_queries": [
@@ -804,7 +828,7 @@
         "type": "logic.if_else",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "Validate The Workflow",
           "skip_execution": false
         },
@@ -822,7 +846,7 @@
                 "operator": "eq",
                 "right_operand": "true"
               },
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "pass \u003c200\u003e",
               "skip_execution": false
             },
@@ -835,7 +859,7 @@
                 "type": "core.string2upper",
                 "base_type": "activity",
                 "properties": {
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "Pass",
                   "skip_execution": false,
                   "source": "pass"
@@ -856,7 +880,7 @@
                 "operator": "eq",
                 "right_operand": "false"
               },
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "fail \u003c400\u003e",
               "skip_execution": false
             },
@@ -869,7 +893,7 @@
                 "type": "core.string2upper",
                 "base_type": "activity",
                 "properties": {
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "Fail",
                   "skip_execution": false,
                   "source": "fail"
@@ -889,7 +913,7 @@
         "properties": {
           "action_timeout": 180,
           "api_call_method": "POST",
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "RunWorkflow",
           "relative_url": "be-console/api/v1/workflows/ui/start?workflow_id=$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$",
           "runtime_user": {
@@ -912,7 +936,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "ExtractWFRunID",
           "input_json": "$activity.definition_activity_01AC7OYDE39QZ0oFDARnivgTkrJVQptvu3Y.output.response_body$",
           "jsonpath_queries": [
@@ -933,7 +957,7 @@
         "type": "core.sleep",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "waitToGetAllActionInstances",
           "skip_execution": false,
           "sleep_interval": 30
@@ -943,14 +967,14 @@
       {
         "unique_name": "definition_activity_01AC7OZ91BCYM29IFkdVO2m9bkrVSuN4d0S",
         "name": "Generic CCS API Request",
-        "title": "WorkflowRunInstance",
+        "title": "GetWorkflowInstanceInfo",
         "type": "ccs.api_request",
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
           "api_call_method": "GET",
-          "continue_on_failure": false,
-          "display_name": "WorkflowRunInstance",
+          "continue_on_failure": true,
+          "display_name": "GetWorkflowInstanceInfo",
           "relative_url": "be-console/api/v1/instances/$activity.definition_activity_01AC7OYR2YJAE3qU0ICPbIOTVj2pfKXiOfc.output.jsonpath_queries.runWFID$?detailed=false",
           "runtime_user": {
             "override_target_runtime_user": false,
@@ -971,7 +995,7 @@
         "type": "logic.for_each",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "For Each",
           "skip_execution": false,
           "source_array": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AC7OPPBOTEY2oSHNgC4VWo3Pvx9QUlIwr$"
@@ -986,7 +1010,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "description": "ExtractActionInstanceID",
               "display_name": "JSONPath Query",
               "input_json": "$activity.definition_activity_01AC7OZ91BCYM29IFkdVO2m9bkrVSuN4d0S.output.response_body$",
@@ -1009,7 +1033,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "Add Row to Table",
               "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB$",
               "row": [
@@ -1032,7 +1056,7 @@
             "properties": {
               "action_timeout": 180,
               "api_call_method": "GET",
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "ActionWorkflowRunInstance",
               "relative_url": "be-console/api/v1/instances/$activity.definition_activity_01AC7OYR2YJAE3qU0ICPbIOTVj2pfKXiOfc.output.jsonpath_queries.runWFID$/actions/$activity.definition_activity_01AC7OZV3YQRY1CBOctkwebqH1p8EhdrW7O.output.jsonpath_queries.ActionInstanceID$",
               "runtime_user": {
@@ -1055,7 +1079,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "ExtractSuccessStatus",
               "input_json": "$activity.definition_activity_01ACDDBB6ME1I75TxRp1qXhsGdkUYNRB36M.output.response_body$",
               "jsonpath_queries": [
@@ -1077,7 +1101,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "AddSuccessStatusToTable",
               "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV$",
               "row": [
@@ -1107,7 +1131,7 @@
               "column_type": "string"
             }
           ],
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "SelectStatusFromSuccessTable",
           "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV$",
           "number_of_rows": {
@@ -1129,7 +1153,7 @@
         "type": "core.replacestring",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "FormatSuccessData",
           "input_string": "$activity.definition_activity_01ACEMJ8BB4V35qDVDdlfa9lK80LLoKVoWz.output.response_body$",
           "replace_list": [
@@ -1149,7 +1173,7 @@
         "type": "core.replacestring",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "CreateSuccessDataJSON",
           "input_string": "$activity.definition_activity_01ACEV8L9WX8U3YGs6r9d7C53FZmPoQjUou.output.result_string$",
           "replace_list": [
@@ -1177,7 +1201,7 @@
         "type": "logic.for_each",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "For Each",
           "skip_execution": false,
           "source_array": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.local.variable_workflow_01AC7OPPBOTEY2oSHNgC4VWo3Pvx9QUlIwr$"
@@ -1192,7 +1216,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "Extract Status",
               "input_json": "$activity.definition_activity_01AHCRTZV2JDL0AfiN9wZqnVQCBziMQnjz5.output.result_string$",
               "jsonpath_queries": [
@@ -1213,7 +1237,7 @@
             "type": "logic.if_else",
             "base_type": "activity",
             "properties": {
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "Condition Block",
               "skip_execution": false
             },
@@ -1231,7 +1255,7 @@
                     "operator": "eq",
                     "right_operand": "true"
                   },
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "If Status = True",
                   "skip_execution": false
                 },
@@ -1244,7 +1268,7 @@
                     "type": "core.replacestring",
                     "base_type": "activity",
                     "properties": {
-                      "continue_on_failure": false,
+                      "continue_on_failure": true,
                       "display_name": "Set True To True",
                       "input_string": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
                       "replace_list": [
@@ -1265,7 +1289,7 @@
                     "base_type": "activity",
                     "properties": {
                       "action_timeout": 180,
-                      "continue_on_failure": false,
+                      "continue_on_failure": true,
                       "display_name": "Add Status To Table",
                       "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
                       "row": [
@@ -1298,7 +1322,7 @@
                     "operator": "eq",
                     "right_operand": "false"
                   },
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "If Status = False",
                   "skip_execution": false
                 },
@@ -1311,7 +1335,7 @@
                     "type": "core.replacestring",
                     "base_type": "activity",
                     "properties": {
-                      "continue_on_failure": false,
+                      "continue_on_failure": true,
                       "display_name": "Set False to False",
                       "input_string": "$activity.definition_activity_01AHDHVS866TF7PB42IhSCO2SD6uAGSRDGX.output.jsonpath_queries.Status$",
                       "replace_list": [
@@ -1332,7 +1356,7 @@
                     "base_type": "activity",
                     "properties": {
                       "action_timeout": 180,
-                      "continue_on_failure": false,
+                      "continue_on_failure": true,
                       "display_name": "Add Status to Table",
                       "input_table": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8$",
                       "row": [
@@ -1364,7 +1388,7 @@
         "type": "logic.if_else",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "Condition Block",
           "skip_execution": false
         },
@@ -1390,7 +1414,7 @@
                   "right_operand": "true"
                 }
               },
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "If Debug is False",
               "skip_execution": false
             },
@@ -1399,14 +1423,14 @@
               {
                 "unique_name": "definition_activity_01AHGHF9N6GDZ2e5PCVQ9p5Tfme51pah0qz",
                 "name": "Generic CCS API Request",
-                "title": "DeleteTheWorkflowRun",
+                "title": "DeleteTheWorkflow instance",
                 "type": "ccs.api_request",
                 "base_type": "activity",
                 "properties": {
                   "action_timeout": 180,
                   "api_call_method": "DELETE",
-                  "continue_on_failure": false,
-                  "display_name": "DeleteTheWorkflowRun",
+                  "continue_on_failure": true,
+                  "display_name": "DeleteTheWorkflow instance",
                   "relative_url": "be-console/api/v1/instances/$activity.definition_activity_01AC7OYR2YJAE3qU0ICPbIOTVj2pfKXiOfc.output.jsonpath_queries.runWFID$",
                   "runtime_user": {
                     "override_target_runtime_user": false,
@@ -1429,7 +1453,7 @@
                 "properties": {
                   "action_timeout": 180,
                   "api_call_method": "DELETE",
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "DeleteTheWorkflow",
                   "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01AC7OR3YEW726UKaak2APnhBPJVISPG2YU.output.jsonpath_queries.workflow_id$",
                   "runtime_user": {
@@ -1441,6 +1465,25 @@
                     "override_workflow_target": true,
                     "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
                   }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01AJ5O4RAE0QT7fI1vYP7Ko1A31TeMbBNET",
+                "name": "Set Variables",
+                "title": "Get Delete Workflow Status",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Get Delete Workflow Status",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AJ5OW3VX1VM7CEmRPK3BHE3DeX5DzXY3u$",
+                      "variable_value_new": "$activity.definition_activity_01AHGO7MAD5M62yzvb8UMqqwFMUGBQ11y7F.output.succeeded$"
+                    }
+                  ]
                 },
                 "object_type": "definition_activity"
               }
@@ -1455,13 +1498,32 @@
         "type": "core.set_multiple_variables",
         "base_type": "activity",
         "properties": {
-          "continue_on_failure": false,
+          "continue_on_failure": true,
           "display_name": "Output JSON Status for Summary",
           "skip_execution": false,
           "variables_to_update": [
             {
               "variable_to_update": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX$",
               "variable_value_new": "$activity.definition_activity_01AHCRTZV2JDL0AfiN9wZqnVQCBziMQnjz5.output.result_string$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01AJ507P0GNB976QKATb8ylm19jD4KNHcBa",
+        "name": "Set Variables",
+        "title": "Format for Email",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Format for Email",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AJ521AVTXNE7ZxaFHyix5fAvRoLiUY9PB$",
+              "variable_value_new": "Getting Schema Id : $activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.succeeded$\n\nCreated Workflow :$activity.definition_activity_01AC7OQRPZNFS40ZHa6eSMQlVRuPRDSDrtp.output.succeeded$\n \nCreated variable: $activity.definition_activity_01AC7OSENZSMQ7K1nyIAqsAfu0hQkrJXJBp.output.succeeded$\n\nValidate Workflow:$activity.definition_activity_01AC7OX5U4AYN4yMKuU40qWQhpeEcNcHNjY.output.succeeded$\n\nExecute Workflow:$activity.definition_activity_01AC7OYDE39QZ0oFDARnivgTkrJVQptvu3Y.output.succeeded$\n\nGetting  Workflow Instance Info:$activity.definition_activity_01AC7OZ91BCYM29IFkdVO2m9bkrVSuN4d0S.output.succeeded$\n\nDeleted Workflow:$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AJ5OW3VX1VM7CEmRPK3BHE3DeX5DzXY3u$\n\nGetting Instance Actions Summary:$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AHKP1ZBHDXR09piIBsmeWrtfAAMBv32hX$\n\n\n\n"
             }
           ]
         },

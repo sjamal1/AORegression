@@ -9,6 +9,30 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "Test",
+          "scope": "local",
+          "name": "VariableToSet",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Debug - True / False: If True the Workflow will not be deleted",
+          "type": "datatype.boolean",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "be-console/api/v1/schemas/core",
           "scope": "local",
           "name": "actionSchemaUrl",
@@ -16,18 +40,6 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01AC7OPPBOO6U1r0H5Qvfci3w1VGfn4Aaxi",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "CreateWF_ID",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
         "object_type": "variable_workflow"
       },
       {
@@ -39,6 +51,28 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01ACDLYHS3XM24Rqav6TCqBfjcqriPAEpBV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
+        "properties": {
+          "scope": "output",
+          "name": "Results",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
+        "properties": {
+          "scope": "local",
+          "name": "InstanceID",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
         "object_type": "variable_workflow"
       },
       {
@@ -175,14 +209,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01AHF0YZA6NW77PGqPv74nc5J7H3I9VT2cK",
+        "schema_id": "datatype.string",
         "properties": {
+          "value": "",
           "scope": "output",
-          "name": "Results",
-          "type": "datatype.table",
+          "name": "CreateWF_ID",
+          "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AHFBIZR0X836qQT2b3ygBLWmnkQe6zSW8",
+        "unique_name": "variable_workflow_01AC7OPPBNMWS1k1ZeNPjaq4Lj7s46l8ohW",
         "object_type": "variable_workflow"
       },
       {
@@ -202,41 +237,6 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "Output Results String",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AJ521AVTXNE7ZxaFHyix5fAvRoLiUY9PB",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Test",
-          "scope": "local",
-          "name": "VariableToSet",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC7OPPBOA0A0LAweBZHkdFhWD0Ri9aJGu",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01AC7Y2ICD83S39GO3cBmEzeT1UUiPEfu9E",
-        "properties": {
-          "scope": "local",
-          "name": "InstanceID",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01AC81ZC2PAWP60S10MYAiV3YSJ4cBhKZZB",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
           "name": "DeleteVariableStatus",
           "type": "datatype.string",
           "is_required": false
@@ -245,15 +245,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug - True / False: If True the Workflow will not be deleted",
-          "type": "datatype.boolean",
+          "value": "",
+          "scope": "output",
+          "name": "Output Results String",
+          "type": "datatype.string",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01AHK1DJE7WCZ2W5cdxXvf6qSw1KYpChIdF",
+        "unique_name": "variable_workflow_01AJ521AVTXNE7ZxaFHyix5fAvRoLiUY9PB",
         "object_type": "variable_workflow"
       }
     ],
@@ -473,7 +473,7 @@
         "properties": {
           "continue_on_failure": true,
           "display_name": "CreatePayloadJSONForSetVar",
-          "input_string": "{\n\"id\": \"\",\n\"title\": \"Set Variables\",\n\"properties\": {\n\"continue_on_failure\": false,\n\"display_name\": \"Set Variables\",\n\"skip_execution\": false,\n\"variables_to_update\": [\n{\n\"variable_to_update\": \"$Variable1.static.Variable2$\",\n\"variable_value_new\": \"This is a Test\"\n}\n]\n}\n}",
+          "input_string": "{\n\"id\": \"\",\n\"title\": \"Set Variables\",\n\"properties\": {\n\"continue_on_failure\": false,\n\"display_name\": \"Set Variables\",\n\"skip_execution\": false,\n\"variables_to_update\": [\n{\n\"variable_to_update\": \"$Variable1.static.Variable2$\",\n\"variable_value_new\": \"This is a Test\"\n}\n]\n}\n}\n",
           "replace_list": [
             {
               "replaced_string": "Variable1",
@@ -1407,7 +1407,7 @@
                   "operator": "eq",
                   "right_operand": false
                 },
-                "operator": "or",
+                "operator": "and",
                 "right_operand": {
                   "left_operand": "$activity.definition_activity_01AC7OWYHUC9X1cQ2v8WStNNFSvUsX8De6Z.output.jsonpath_queries.workflow_valid$",
                   "operator": "eq",
@@ -1523,7 +1523,7 @@
           "variables_to_update": [
             {
               "variable_to_update": "$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AJ521AVTXNE7ZxaFHyix5fAvRoLiUY9PB$",
-              "variable_value_new": "Getting Schema Id : $activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.succeeded$\n\nCreated Workflow :$activity.definition_activity_01AC7OQRPZNFS40ZHa6eSMQlVRuPRDSDrtp.output.succeeded$\n \nCreated variable: $activity.definition_activity_01AC7OSENZSMQ7K1nyIAqsAfu0hQkrJXJBp.output.succeeded$\n\nValidate Workflow:$activity.definition_activity_01AC7OX5U4AYN4yMKuU40qWQhpeEcNcHNjY.output.succeeded$\n\nExecute Workflow:$activity.definition_activity_01AC7OYDE39QZ0oFDARnivgTkrJVQptvu3Y.output.succeeded$\n\nGetting  Workflow Instance Info:$activity.definition_activity_01AC7OZ91BCYM29IFkdVO2m9bkrVSuN4d0S.output.succeeded$\n\nDeleted Workflow:$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AJ5OW3VX1VM7CEmRPK3BHE3DeX5DzXY3u$\n\n\n\n\n\n"
+              "variable_value_new": "Activity Name                        Pass/Fail\n--------------------------------------------------------------------------------------\n\nGetting Schema Id : $activity.definition_activity_01AC7OQ2EYFPI5sa278ZfLiolAwXvVEjwwS.output.succeeded$\n\nCreated Workflow :$activity.definition_activity_01AC7OQRPZNFS40ZHa6eSMQlVRuPRDSDrtp.output.succeeded$\n \nCreated variable: $activity.definition_activity_01AC7OSENZSMQ7K1nyIAqsAfu0hQkrJXJBp.output.succeeded$\n\nValidate Workflow:$activity.definition_activity_01AC7OX5U4AYN4yMKuU40qWQhpeEcNcHNjY.output.succeeded$\n\nExecute Workflow:$activity.definition_activity_01AC7OYDE39QZ0oFDARnivgTkrJVQptvu3Y.output.succeeded$\n\nGetting  Workflow Instance Info:$activity.definition_activity_01AC7OZ91BCYM29IFkdVO2m9bkrVSuN4d0S.output.succeeded$\n\nDeleted Workflow:$workflow.definition_workflow_01AC7OO3Y53W81izZqqpj59KUNcEifJWuM4.output.variable_workflow_01AJ5OW3VX1VM7CEmRPK3BHE3DeX5DzXY3u$"
             }
           ]
         },
@@ -1531,19 +1531,8 @@
       }
     ],
     "categories": [
-      "category_01A0II6OR0JCF5yWR2fuUXW7XvXivlY4r5S"
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
-  },
-  "categories": {
-    "category_01A0II6OR0JCF5yWR2fuUXW7XvXivlY4r5S": {
-      "unique_name": "category_01A0II6OR0JCF5yWR2fuUXW7XvXivlY4r5S",
-      "name": "AO_Automation",
-      "title": "AO_Automation",
-      "type": "basic.category",
-      "base_type": "category",
-      "category_type": "custom",
-      "object_type": "category"
-    }
   },
   "table_types": {
     "tabletype_01A0BCNTWU3SQ4puHleQrtpoieVmmVCH3xz": {
@@ -1587,13 +1576,13 @@
       "display_name": "Results_Table",
       "columns": [
         {
-          "name": "Status",
-          "title": "Status",
+          "name": "ActivityName",
+          "title": "ActivityName",
           "type": "string"
         },
         {
-          "name": "ActivityName",
-          "title": "ActivityName",
+          "name": "Status",
+          "title": "Status",
           "type": "string"
         }
       ],

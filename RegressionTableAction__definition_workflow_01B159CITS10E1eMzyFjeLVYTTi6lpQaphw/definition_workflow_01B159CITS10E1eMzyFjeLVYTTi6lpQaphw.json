@@ -1,0 +1,1534 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw",
+    "name": "RegressionTableActions",
+    "title": "RegressionTableActions",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Results",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B1XCYMW8PHS7bRxxwYzkKLuA14a2XG680",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "AddToRowStatus",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B4AOHM4ZS9I5cn01l68jBFlCKvRNEqXsK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01B055MIABGTQ32VA0UTzxoLZzf2bwNRCvI",
+        "properties": {
+          "scope": "local",
+          "name": "TableActionsTable",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
+        "properties": {
+          "scope": "local",
+          "name": "Succeeded Test Cases Table",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B159CHVDKZU75mrZ7QTJgvM5tR8hSbs1e",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
+        "properties": {
+          "scope": "local",
+          "name": "Failed Test Cases Table",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B159CHVDUG05oGkRpNBj1QDAg81E4g5ih",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RegressionTableActions",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01B159H9ME3UM1b8CVOSeyIs92qfaXWvWl0",
+        "name": "Group",
+        "title": "Read Table From Text_Add_Select_Read Table From JSON",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Read Table From Text_Add_Select_Read Table From JSON",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B159IHMOMAY6KdgA6T3BxTCFBe2B3MB6M",
+            "name": "Read Table from Text",
+            "title": "Read Table from Text",
+            "type": "core.read_table_from_text",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "delimiters": [
+                {
+                  "delimiter": ","
+                }
+              ],
+              "display_name": "Read Table from Text",
+              "input_text": "Finance,101,Donald,Patrick,Banglore\nMarketing,102,Samuel,Samson,Hyderabad\nIT,103,Ian,Jacob,Pune",
+              "persist_output": false,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "Department",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "EmpID",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159JDFDJKV0kv03YJS4x7HuLoV32CssS",
+            "name": "For Each",
+            "title": "For Each",
+            "type": "logic.for_each",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "For Each",
+              "skip_execution": false,
+              "source_array": "$activity.definition_activity_01B159IHMOMAY6KdgA6T3BxTCFBe2B3MB6M.output.read_table_from_text$"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B159KGPZHPK2EWaUumJ9mJJHFTcOGY5Ym",
+                "name": "Add Row to Table",
+                "title": "Add Row to Table",
+                "type": "core.addrowtotable",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Add Row to Table",
+                  "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
+                  "row": [
+                    {
+                      "key": "EmpID",
+                      "type": "string",
+                      "value": "$activity.definition_activity_01B159JDFDJKV0kv03YJS4x7HuLoV32CssS.input.source_array[@].EmpID$"
+                    },
+                    {
+                      "key": "FirstName",
+                      "type": "string",
+                      "value": "$activity.definition_activity_01B159JDFDJKV0kv03YJS4x7HuLoV32CssS.input.source_array[@].FirstName$"
+                    },
+                    {
+                      "key": "LastName",
+                      "type": "string",
+                      "value": "$activity.definition_activity_01B159JDFDJKV0kv03YJS4x7HuLoV32CssS.input.source_array[@].LastName$"
+                    },
+                    {
+                      "key": "Deppartment",
+                      "type": "string",
+                      "value": "$activity.definition_activity_01B159JDFDJKV0kv03YJS4x7HuLoV32CssS.input.source_array[@].Department$"
+                    },
+                    {
+                      "key": "Location",
+                      "type": "string",
+                      "value": "$activity.definition_activity_01B159JDFDJKV0kv03YJS4x7HuLoV32CssS.input.source_array[@].Location$"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01B4AOR4WENZC1GeGdvsuTeUeyktTDAP8jO",
+                "name": "Set Variables",
+                "title": "Get Add Row To Table Status",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": true,
+                  "display_name": "Get Add Row To Table Status",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.output.variable_workflow_01B4AOHM4ZS9I5cn01l68jBFlCKvRNEqXsK$",
+                      "variable_value_new": "$activity.definition_activity_01B159KGPZHPK2EWaUumJ9mJJHFTcOGY5Ym.output.succeeded$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy",
+            "name": "Select from Table",
+            "title": "Select from Table",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Select from Table",
+              "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": false,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw",
+            "name": "JSONPath Query",
+            "title": "Extract Data from Select Table",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Data from Select Table",
+              "input_json": "$activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..Deppartment",
+                  "jsonpath_query_name": "Department",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..EmpID",
+                  "jsonpath_query_name": "EmployeeID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..FirstName",
+                  "jsonpath_query_name": "FirstName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..LastName",
+                  "jsonpath_query_name": "LastName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..Location",
+                  "jsonpath_query_name": "Location",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159NVQWDU75ggt5ZtD94XzWzpQufJNuI",
+            "name": "Read Table from JSON",
+            "title": "Read Table from JSON",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Read Table from JSON",
+              "input_json": "$activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.response_body$",
+              "jsonpath_query": "$.*",
+              "persist_output": false,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "Deppartment",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "EmpID",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG",
+            "name": "JSONPath Query",
+            "title": "Extract Data Read Table from JSON",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Data Read Table from JSON",
+              "input_json": "$activity.definition_activity_01B159NVQWDU75ggt5ZtD94XzWzpQufJNuI.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..Deppartment",
+                  "jsonpath_query_name": "Department",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..EmpID",
+                  "jsonpath_query_name": "EmployeeID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..FirstName",
+                  "jsonpath_query_name": "FirstName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..LastName",
+                  "jsonpath_query_name": "LastName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..Location",
+                  "jsonpath_query_name": "Location",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159Q2D8Z9X7WbjmnwFLZitiazZBXB3Ep",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B159R3T12F0129SmYMvQhimqCm1orWosh",
+                "name": "Condition Branch",
+                "title": "If Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": "$activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.row_count$",
+                              "operator": "eq",
+                              "right_operand": "$activity.definition_activity_01B159NVQWDU75ggt5ZtD94XzWzpQufJNuI.output.row_count$"
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Department$",
+                              "operator": "eq",
+                              "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.Department$"
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.EmployeeID$",
+                            "operator": "eq",
+                            "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.EmployeeID$"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.FirstName$",
+                          "operator": "eq",
+                          "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.FirstName$"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.LastName$",
+                        "operator": "eq",
+                        "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.LastName$"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Location$",
+                      "operator": "eq",
+                      "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.Location$"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "If Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B159RXG4R8E3aaLAa06mxOytuVXtQ0FAm",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDKZU75mrZ7QTJgvM5tR8hSbs1e$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table From Text_Add_Select_Read Table From JSON - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B159T5WCM3J7mqZrwdack3LFt1SZhhMUu",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": "$activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.row_count$",
+                              "operator": "ne",
+                              "right_operand": "$activity.definition_activity_01B159NVQWDU75ggt5ZtD94XzWzpQufJNuI.output.row_count$"
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Department$",
+                              "operator": "ne",
+                              "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.Department$"
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.EmployeeID$",
+                            "operator": "ne",
+                            "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.EmployeeID$"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.FirstName$",
+                          "operator": "ne",
+                          "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.FirstName$"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.LastName$",
+                        "operator": "ne",
+                        "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.LastName$"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Location$",
+                      "operator": "ne",
+                      "right_operand": "$activity.definition_activity_01B159P8E9VDK5AIbMkJmv0p48f0WCxBDDG.output.jsonpath_queries.Location$"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B159U19TJ9Q1vGGGHxdRGSW8YNjq9i6yU",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDUG05oGkRpNBj1QDAg81E4g5ih$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table From Text_Add_Select_Read Table From JSON - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B159UUGS7Y71ObMOpPNhLHOmRr8hLqILK",
+        "name": "Group",
+        "title": "Read Table From XML",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Read Table From XML",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B159VWCBKXJ6TQaqaEV1sIeSstuED0rQP",
+            "name": "Convert Json to Xml",
+            "title": "Convert Json to Xml",
+            "type": "core.json2xml",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Convert Json to Xml",
+              "input_json": "$activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.response_body$",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159X4GCIYJ7OvhUWQcmFmu8p3k0DnbnR",
+            "name": "Read Table from XML",
+            "title": "Read Table from XML",
+            "type": "corejava.read_table_from_xml",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Read Table from XML",
+              "input_xml": "$activity.definition_activity_01B159VWCBKXJ6TQaqaEV1sIeSstuED0rQP.output.output_xml$",
+              "persist_output": true,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "Deppartment",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "EmpID",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                }
+              ],
+              "xmlpath_query": "//object"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3",
+            "name": "JSONPath Query",
+            "title": "Extract Data Read Table from XML",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Data Read Table from XML",
+              "input_json": "$activity.definition_activity_01B159X4GCIYJ7OvhUWQcmFmu8p3k0DnbnR.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..Deppartment",
+                  "jsonpath_query_name": "Department",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..EmpID",
+                  "jsonpath_query_name": "EmployeeID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..FirstName",
+                  "jsonpath_query_name": "FirstName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..LastName",
+                  "jsonpath_query_name": "LastName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..Location",
+                  "jsonpath_query_name": "Location",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B159ZDY6EW55C0ri6xZN7IraseHanz9rs",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B15A0GF2K894q9ma3HhSbAEnpNmMp0Yyb",
+                "name": "Condition Branch",
+                "title": "If Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": "$activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.row_count$",
+                              "operator": "eq",
+                              "right_operand": "$activity.definition_activity_01B159X4GCIYJ7OvhUWQcmFmu8p3k0DnbnR.output.row_count$"
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Department$",
+                              "operator": "eq",
+                              "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.Department$"
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.EmployeeID$",
+                            "operator": "eq",
+                            "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.EmployeeID$"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.FirstName$",
+                          "operator": "eq",
+                          "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.FirstName$"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.LastName$",
+                        "operator": "eq",
+                        "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.LastName$"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Location$",
+                      "operator": "eq",
+                      "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.Location$"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "If Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B15A1A7RGLS4S2UymWrVzHPtjJ85BTks5",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDKZU75mrZ7QTJgvM5tR8hSbs1e$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "ReadTableFromXML - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B15A2IVX0CY7cWQiZadeFJ816fDelItvD",
+                "name": "Condition Branch",
+                "title": "If Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": "$activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.row_count$",
+                              "operator": "ne",
+                              "right_operand": "$activity.definition_activity_01B159X4GCIYJ7OvhUWQcmFmu8p3k0DnbnR.output.row_count$"
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Department$",
+                              "operator": "ne",
+                              "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.Department$"
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.EmployeeID$",
+                            "operator": "ne",
+                            "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.EmployeeID$"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.FirstName$",
+                          "operator": "ne",
+                          "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.FirstName$"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.LastName$",
+                        "operator": "ne",
+                        "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.LastName$"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B159MO180WA2MCsOM4wVHkHOLZrL0nSiw.output.jsonpath_queries.Location$",
+                      "operator": "ne",
+                      "right_operand": "$activity.definition_activity_01B159YJEROOR0lmGpAwpMw06xwaivYJOm3.output.jsonpath_queries.Location$"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "If Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B15A3B3AA3N04ujlu9zJ2Ntf96R0ul3N5",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDUG05oGkRpNBj1QDAg81E4g5ih$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "ReadTableFromXML - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B1QQ61YLHI15fyospCZIVYCZSBxm2beM7",
+        "name": "Group",
+        "title": "Update Row in Table",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Update Row in Table",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B1QQTLPWDVA09LhTCHJLOY0VLewOw8T3G",
+            "name": "Update Row in Table",
+            "title": "Update Row in Table",
+            "type": "core.updaterowintable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Deppartment",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "EmpID",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Update Row in Table",
+              "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
+              "row": [
+                {
+                  "key": "LastName",
+                  "type": "string",
+                  "value": "Test"
+                },
+                {
+                  "key": "Location",
+                  "type": "string",
+                  "value": "Test"
+                },
+                {
+                  "key": "Deppartment",
+                  "type": "string",
+                  "value": "Test"
+                },
+                {
+                  "key": "EmpID",
+                  "type": "string",
+                  "value": "100"
+                },
+                {
+                  "key": "FirstName",
+                  "type": "string",
+                  "value": "Test"
+                }
+              ],
+              "rows": {
+                "rows_matching_criteria": true,
+                "where_clause": "EmpID  == '101'"
+              },
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B1RDSFPTR332PWqXP3K9DFFMLnlGPVAaF",
+            "name": "Select from Table",
+            "title": "Select the Updated Row",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Deppartment",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "EmpID",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Select the Updated Row",
+              "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": true,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              },
+              "where_clause": "EmpID  == '100'"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf",
+            "name": "JSONPath Query",
+            "title": "Extract Data Select the Updated Row",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Data Select the Updated Row",
+              "input_json": "$activity.definition_activity_01B1RDSFPTR332PWqXP3K9DFFMLnlGPVAaF.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..Deppartment",
+                  "jsonpath_query_name": "Department",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..EmpID",
+                  "jsonpath_query_name": "EmployeeID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..FirstName",
+                  "jsonpath_query_name": "FirstName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..LastName",
+                  "jsonpath_query_name": "LastName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..Location",
+                  "jsonpath_query_name": "Location",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B1WHALS6UJZ7hbCbZnhKGwiqqIylZu8GP",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B1WHAS780XE2BdxGY2vDc4KYdEK9sk4W8",
+                "name": "Condition Branch",
+                "title": "If Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Department$",
+                            "operator": "eq",
+                            "right_operand": "Test"
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.EmployeeID$",
+                            "operator": "eq",
+                            "right_operand": "100"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.FirstName$",
+                          "operator": "eq",
+                          "right_operand": "Test"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.LastName$",
+                        "operator": "eq",
+                        "right_operand": "Test"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Location$",
+                      "operator": "eq",
+                      "right_operand": "Test"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "If Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B1WHAXM7AWN3eijmKRlwnUKwE9akZfyjB",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDKZU75mrZ7QTJgvM5tR8hSbs1e$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B1WMKNHE1CQ6xaVt7Ea6BsCjOF5DNvl8k",
+                "name": "Condition Branch",
+                "title": "If Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Department$",
+                            "operator": "ne",
+                            "right_operand": "Test"
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.EmployeeID$",
+                            "operator": "ne",
+                            "right_operand": "100"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.FirstName$",
+                          "operator": "ne",
+                          "right_operand": "Test"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.LastName$",
+                        "operator": "ne",
+                        "right_operand": "Test"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Location$",
+                      "operator": "ne",
+                      "right_operand": "Test"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "If Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B1WMKTTWJZ92hzN6rJw3BGiU2iVNi0wHB",
+                    "name": "Add Row to Table",
+                    "title": "Update  Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update  Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDKZU75mrZ7QTJgvM5tR8hSbs1e$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B3XF3GVRNY466qvdSXdI2vTBH5YAOFTKW",
+        "name": "Group",
+        "title": "Delete From Table",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Delete From Table",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B1XHWUA3BJ066GzMtG6RfyyCzKvoGbcPr",
+            "name": "Delete from Table",
+            "title": "Delete from Table",
+            "type": "core.deleterowfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Delete from Table",
+              "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
+              "rows": {
+                "rows_matching_criteria": true,
+                "where_clause": "EmpID =='102' OR  EmpID =='103'"
+              },
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B3XFFQGHO544eQeDWPusUDPbdJeWS75pX",
+            "name": "Select from Table",
+            "title": "Select the Updated Row",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Deppartment",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "EmpID",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Select the Updated Row",
+              "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": true,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              },
+              "where_clause": "EmpID  == '100'"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B3XG1QGM4JI1tPxdOhQu1GfAdWBc5cavi",
+            "name": "JSONPath Query",
+            "title": "Extract Data Select the Updated Row",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Data Select the Updated Row",
+              "input_json": "$activity.definition_activity_01B1RDSFPTR332PWqXP3K9DFFMLnlGPVAaF.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..Deppartment",
+                  "jsonpath_query_name": "Department",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..EmpID",
+                  "jsonpath_query_name": "EmployeeID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..FirstName",
+                  "jsonpath_query_name": "FirstName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..LastName",
+                  "jsonpath_query_name": "LastName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..Location",
+                  "jsonpath_query_name": "Location",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B3XGFGCR9GO6yk2cZr4EptbNflTm53R10",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B3XGFO7F3UW03rU8aP8P3STFpfFf0ijxE",
+                "name": "Condition Branch",
+                "title": "If Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Department$",
+                            "operator": "eq",
+                            "right_operand": "Test"
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.EmployeeID$",
+                            "operator": "eq",
+                            "right_operand": "100"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.FirstName$",
+                          "operator": "eq",
+                          "right_operand": "Test"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.LastName$",
+                        "operator": "eq",
+                        "right_operand": "Test"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Location$",
+                      "operator": "eq",
+                      "right_operand": "Test"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "If Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B3XGFUGEKE25SnpFKEec797L3gwKvlI8L",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDKZU75mrZ7QTJgvM5tR8hSbs1e$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Delete From Table - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B3XGFZEDRG83kyGQyA7DdnaazIS1k9jy4",
+                "name": "Condition Branch",
+                "title": "If Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Department$",
+                            "operator": "ne",
+                            "right_operand": "Test"
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.EmployeeID$",
+                            "operator": "ne",
+                            "right_operand": "100"
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.FirstName$",
+                          "operator": "ne",
+                          "right_operand": "Test"
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.LastName$",
+                        "operator": "ne",
+                        "right_operand": "Test"
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01B1RVYAGO1IE3MP57bWmbYrjb87UDQxikf.output.jsonpath_queries.Location$",
+                      "operator": "ne",
+                      "right_operand": "Test"
+                    }
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "If Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B3XGG38J7WL0LP91H5ufcct02iwjwIEWz",
+                    "name": "Add Row to Table",
+                    "title": "Update  Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update  Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVDKZU75mrZ7QTJgvM5tR8hSbs1e$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Delete From Table - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B1XAFTGZWMK4ieqnFIJUfcKEdTwoYXJj5",
+        "name": "Set Variables",
+        "title": "Format For Email",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Format For Email",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.output.variable_workflow_01B1XCYMW8PHS7bRxxwYzkKLuA14a2XG680$",
+              "variable_value_new": "Activity Name                        Pass/Fail\n--------------------------------------------------------------------------------------\n\nRead Table From Text :   $activity.definition_activity_01B159IHMOMAY6KdgA6T3BxTCFBe2B3MB6M.output.succeeded$\n\nAdd Row To Table :   $workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.output.variable_workflow_01B4AOHM4ZS9I5cn01l68jBFlCKvRNEqXsK$\n \nSelect From Table:   $activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.succeeded$\n\nRead Table From JSON:  $activity.definition_activity_01B159NVQWDU75ggt5ZtD94XzWzpQufJNuI.output.succeeded$\n\nRead Table From XML:  $activity.definition_activity_01B159X4GCIYJ7OvhUWQcmFmu8p3k0DnbnR.output.succeeded$\n\nUpdate Row in Table:   $activity.definition_activity_01B1QQTLPWDVA09LhTCHJLOY0VLewOw8T3G.output.succeeded$\n\nDelete From Table:   $activity.definition_activity_01B1XHWUA3BJ066GzMtG6RfyyCzKvoGbcPr.output.succeeded$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH": {
+      "unique_name": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
+      "data_type": "datatype.tabletype",
+      "display_name": "Succeeded Test Cases",
+      "columns": [
+        {
+          "name": "Testcase",
+          "title": "Testcase",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01B055MIABGTQ32VA0UTzxoLZzf2bwNRCvI": {
+      "unique_name": "tabletype_01B055MIABGTQ32VA0UTzxoLZzf2bwNRCvI",
+      "data_type": "datatype.tabletype",
+      "display_name": "Multiple Column Table",
+      "columns": [
+        {
+          "name": "Location",
+          "title": "Location",
+          "type": "string"
+        },
+        {
+          "name": "Deppartment",
+          "title": "Department",
+          "type": "string"
+        },
+        {
+          "name": "EmpID",
+          "title": "Emp ID",
+          "type": "string"
+        },
+        {
+          "name": "FirstName",
+          "title": "First Name",
+          "type": "string"
+        },
+        {
+          "name": "LastName",
+          "title": "Last Name",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}

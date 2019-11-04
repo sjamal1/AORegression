@@ -1,0 +1,1881 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo",
+    "name": "RegressionTableActions-Negative",
+    "title": "RegressionTableActions-Negative",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_01B4D37673D847V5NWPEMI7nIVi1jRlg5Fd",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Department": "Test",
+                "EmpID": 101,
+                "FirstName": "One",
+                "LastName": "One",
+                "Location": "Pune"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Dev",
+                "EmpID": 102,
+                "FirstName": "Two",
+                "LastName": "Two",
+                "Location": "Bombay"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Product",
+                "EmpID": 103,
+                "FirstName": "Three",
+                "LastName": "Three",
+                "Location": "Hyderabad"
+              }
+            }
+          ],
+          "scope": "local",
+          "name": "TestTable2",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B5ZN3ATA3JN6UHiq32mB9H3tBxSNeJV8D",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
+        "properties": {
+          "scope": "local",
+          "name": "Succeeded Test Cases Table",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
+        "properties": {
+          "scope": "local",
+          "name": "Failed Test Cases Table",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 56,
+          "scope": "local",
+          "name": "TestIntVar",
+          "type": "datatype.integer",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B66LWSCAYAF0adSvH0DpzLbHbQPQlIgua",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01B677O215EYB2VKFwoQ66fX9GlloITIRnL",
+        "properties": {
+          "scope": "local",
+          "name": "TestIntTable",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B677W6VYLU01oz2p4uiEkAP3KwdB5U2JH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01B4D37673D847V5NWPEMI7nIVi1jRlg5Fd",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Department": "Test",
+                "EmpID": 1,
+                "FirstName": "John",
+                "LastName": "Kelly",
+                "Location": "Pune"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Dev",
+                "EmpID": 2,
+                "FirstName": "Mohan",
+                "LastName": "Kumar",
+                "Location": "Delhi"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Prod",
+                "EmpID": 3,
+                "FirstName": "Cheval",
+                "LastName": "Murti",
+                "Location": "Hyderabad"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Manager",
+                "EmpID": 4,
+                "FirstName": "Dharma",
+                "LastName": "Burma",
+                "Location": "Pune"
+              }
+            }
+          ],
+          "scope": "local",
+          "name": "TestStringTable",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01B6TU1D99D0N5uOhHImI7qmGOzOVOGjrzC",
+        "properties": {
+          "scope": "local",
+          "name": "TestStringTableTwoRows",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Results",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BAAEVXHLVNY2HwPS6PmhY56IrSaOs2aia",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RegressionTableActions-Negative",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01B63U027WQFO180Bh2iBKGYhb3q0npcC3u",
+        "name": "Group",
+        "title": "Read Table From Text",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Read Table From Text",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B60Q6OELG6R4ZZ3OBFY2EIKt22JHCYmb0",
+            "name": "Read Table from Text",
+            "title": "Read Table from Text",
+            "type": "core.read_table_from_text",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "delimiters": [
+                {
+                  "delimiter": ","
+                }
+              ],
+              "display_name": "Read Table from Text",
+              "input_text": "                                                            ",
+              "persist_output": true,
+              "populate_columns": true,
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B63UBWLIWEL0kQZfPmkvf4qWBOlRAKTCT",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B63UC019VP05ag3E3CmdY0JxayVHiBx37",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B60Q6OELG6R4ZZ3OBFY2EIKt22JHCYmb0.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B63VMFY1S1H6PPmcCq7xpYc0YuQIHzdUM",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table From Text - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B63UC13CQWY24OT5CKgO1TfaKNBQucWrH",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B60Q6OELG6R4ZZ3OBFY2EIKt22JHCYmb0.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B63VOAETEMO0T0Cf6aKKBGlvhgAZfRwPl",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table From Text - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B65C6YRVX8P7XFALhn1vzMssNaRicyQdn",
+        "name": "Group",
+        "title": "Read Table from JSON",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Read Table from JSON",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B6588NX0N235B6ocglmEkDDs8Mp17Rd3P",
+            "name": "Read Table from JSON",
+            "title": "Read Table from JSON",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Read Table from JSON",
+              "input_json": "[{\"FirstName\":\"Donald\",\"Deppartment\":\"Finance\",\"LastName\":\"Patrick\",\"EmpID\":\"101\",\"Location\":\"Banglore\"},{\"FirstName\":\"Samuel\",\"Deppartment\":\"Marketing\",\"LastName\":\"Samson\",\"EmpID\":\"102\",\"Location\":\"Hyderabad\"},{\"FirstName\":\"Ian\",\"Deppartment\":\"IT\",\"LastName\":\"Jacob\",\"EmpID\":\"103\",\"Location\":\"Pune\"}]",
+              "jsonpath_query": "$.FirstName",
+              "persist_output": false,
+              "populate_columns": true,
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B65CCVAVVV74Q7Drm222A5X7GmTR9AU5q",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B65CCWL41GB3BA0msBwDwbKpMGiNO7onk",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B6588NX0N235B6ocglmEkDDs8Mp17Rd3P.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B65CCXNGGL25AXg46tsViczSykTZzTcOI",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table from JSON - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B65CCYL05A64fgagWTxMAvnwYtnrHFPqw",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B6588NX0N235B6ocglmEkDDs8Mp17Rd3P.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B65CCZPW1SJ5aBQsH3TxtsgSTia9Lbb5q",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table from JSON - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B65KGNLF3DF2corT7IAUPzgcQXIRPSjqa",
+        "name": "Group",
+        "title": "Read Table From XML",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Read Table From XML",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B65KBDZQTMQ01d2xRqUu6A9VM9KwsKRtJ",
+            "name": "Read Table from XML",
+            "title": "Read Table from XML",
+            "type": "corejava.read_table_from_xml",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Read Table from XML",
+              "input_xml": "\u003croot\u003e\n  \u003cobject\u003e\n    \u003cDeppartment\u003eFinance\u003c/Deppartment\u003e\n    \u003cEmpID\u003e101\u003c/EmpID\u003e\n    \u003cFirstName\u003eDonald\u003c/FirstName\u003e\n    \u003cLastName\u003ePatrick\u003c/LastName\u003e\n    \u003cLocation\u003eBanglore\u003c/Location\u003e\n  \u003c/object\u003e\n  \u003cobject\u003e\n    \u003cDeppartment\u003eMarketing\u003c/Deppartment\u003e\n    \u003cEmpID\u003e102\u003c/EmpID\u003e\n    \u003cFirstName\u003eSamuel\u003c/FirstName\u003e\n    \u003cLastName\u003eSamson\u003c/LastName\u003e\n    \u003cLocation\u003eHyderabad\u003c/Location\u003e\n  \u003c/object\u003e\n  \u003cobject\u003e\n    \u003cDeppartment\u003eIT\u003c/Deppartment\u003e\n    \u003cEmpID\u003e103\u003c/EmpID\u003e\n    \u003cFirstName\u003eIan\u003c/FirstName\u003e\n    \u003cLastName\u003eJacob\u003c/LastName\u003e\n    \u003cLocation\u003ePune\u003c/Location\u003e\n  \u003c/object\u003e\n\u003c/root\u003e",
+              "persist_output": false,
+              "populate_columns": true,
+              "skip_execution": false,
+              "xmlpath_query": "/object"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B65OLFF2V0V5z5lD6XTWHPgdHtkuRflkC",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B65OLGR43S66LT8r9fDPkr2pYQvn3ounp",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B65KBDZQTMQ01d2xRqUu6A9VM9KwsKRtJ.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B65OLHTPRA71SsU50p2oTWfZs4Rd6LSYy",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table from XML - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B65OLITQ98O0UeiLCvrwRKm87I35Ix4Q8",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B65KBDZQTMQ01d2xRqUu6A9VM9KwsKRtJ.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B65OLJWUXL047noYay6NMF3UJQ1gGXZN9",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Read Table from XML - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B71RLGEU5NT4hA9vvarQnnLRBqDJBGgHq",
+        "name": "Group",
+        "title": "Select from Table",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Select from Table",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B70WT2B67G93wT1y2e11qFlGhepIopiDS",
+            "name": "Select from Table",
+            "title": "Select from Table - Invalid Query",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "EmpID",
+                  "column_type": "integer"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Department",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Select from Table - Invalid Query",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": false,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              },
+              "where_clause": "EmpID IN (1,2)"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B71S4ONAHU02e3eEPipy5iSdMiDdQ14Sc",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B71S4PYC1202fVK4sI32erjTeenwfxS6F",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B70WT2B67G93wT1y2e11qFlGhepIopiDS.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B71S4R777PQ5HXtX8vdeggVg9noGeGP2j",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Select from Table - Invalid Query - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B71S4S6HI3F4NR9Lcv4dV42DLHRVpbgeY",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B70WT2B67G93wT1y2e11qFlGhepIopiDS.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B71S4TD6X986SkPaWxlCIT5QT04RujHEm",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Select from Table - Invalid Query - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B71VOZ3I0I63qjcWRQKJt9WZg4OLcyGPT",
+            "name": "Select from Table",
+            "title": "Select from Table - Zero Row",
+            "type": "core.selectfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "EmpID",
+                  "column_type": "integer"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Department",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Select from Table - Zero Row",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d$",
+              "number_of_rows": {
+                "all_rows": true,
+                "at_most": false
+              },
+              "persist_output": false,
+              "skip_execution": false,
+              "sorting": {
+                "no_sort": true,
+                "sort_by": false
+              },
+              "where_clause": "EmpID == 6"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B71YEU3EO7D11Wy2rJCgpJ92JSLwG4bq2",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B71YEVM7D3D15pXhWnipPuQddd6nAoszs",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B71VOZ3I0I63qjcWRQKJt9WZg4OLcyGPT.output.row_count$",
+                    "operator": "eq",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B71YEWLWC8I4suKIKab0Semf1PNjqSs6t",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Select from Table - Zero Row - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B71YEXJPCA23BBiTIHxYIn7vMPFjYi8Jx",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B71VOZ3I0I63qjcWRQKJt9WZg4OLcyGPT.output.row_count$",
+                    "operator": "ne",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B71YEYN7E726PR7iCjbG8CPZzg4IrxnpA",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Select from Table - Zero Row - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B7X4BD6MSS81aib8pDAwrPnot0sZhtDHQ",
+        "name": "Group",
+        "title": "Add Row To Table",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Add Row To Table",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B7X43GVIYSU0nUb3WLdECQCH9JoZqUJpG",
+            "name": "Add Row to Table",
+            "title": "Add Row to Table - Same row as Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Add Row to Table - Same row as Table",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa$",
+              "row": [
+                {
+                  "key": "a",
+                  "type": "string",
+                  "value": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa[0].a$"
+                },
+                {
+                  "key": "b",
+                  "type": "string",
+                  "value": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa[0].b$"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B7X4U2CC62606EyvMva8SFSZzGmEAwt85",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B7X4U3NLHSN7ju4qbK3NJXTVxl2M43uMd",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B7X43GVIYSU0nUb3WLdECQCH9JoZqUJpG.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7X4U4SV13M6Pu2CEx0Yv0r0N7rALMegF",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Add Row to Table - Same row as Table - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B7X4U5R23S64qGWbyBd8oi8NBxNhy1PF6",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B7X43GVIYSU0nUb3WLdECQCH9JoZqUJpG.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7X4U6TUQS35pMEppYewdR9bZvQnW6yhP",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Add Row to Table - Same row as Table - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B7PFSJNZ4Q73oJHpf65jDsJwaZlianqpX",
+        "name": "Group",
+        "title": "Update Row in Table",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Update Row in Table",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B7PL5N1K7B76QCKfc7bGuNCvWjzsRARV7",
+            "name": "Update Row in Table",
+            "title": "Update Row in Table - Invalid Query",
+            "type": "core.updaterowintable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "EmpID",
+                  "column_type": "integer"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Department",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Update Row in Table - Invalid Query",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d$",
+              "row": [
+                {
+                  "key": "EmpID",
+                  "type": "integer",
+                  "value": 5
+                },
+                {
+                  "key": "FirstName",
+                  "type": "string",
+                  "value": "a"
+                },
+                {
+                  "key": "LastName",
+                  "type": "string",
+                  "value": "b"
+                },
+                {
+                  "key": "Department",
+                  "type": "string",
+                  "value": "c"
+                },
+                {
+                  "key": "Location",
+                  "type": "string",
+                  "value": "d"
+                }
+              ],
+              "rows": {
+                "rows_matching_criteria": true,
+                "where_clause": "EmpID IN (1,3)"
+              },
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B7PZXUS3WLN2QZsHozofmp923kfE50bic",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B7PZXVZB8221RqtUwwRfHsS1pW82a4SoO",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B7PL5N1K7B76QCKfc7bGuNCvWjzsRARV7.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7PZXWZ78JG7la67jJRxyMRZomEFLrVX3",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table - Invalid Query - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B7PZXY15X711ZMnA7iIAzgFHa9obkN6Q6",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B7PL5N1K7B76QCKfc7bGuNCvWjzsRARV7.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7PZXZ6HBP70HPx6QwYJOxnX7J6nl5xWU",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table - Invalid Query - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B72OE41T6F62Nvus3tNY9OiF0tVIPKLC9",
+            "name": "Update Row in Table",
+            "title": "Update Row in Table - Zero Row",
+            "type": "core.updaterowintable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "EmpID",
+                  "column_type": "integer"
+                },
+                {
+                  "column_name": "FirstName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "LastName",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Department",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "Location",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Update Row in Table - Zero Row",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d$",
+              "row": [
+                {
+                  "key": "EmpID",
+                  "type": "integer",
+                  "value": 7
+                },
+                {
+                  "key": "FirstName",
+                  "type": "string",
+                  "value": "b"
+                },
+                {
+                  "key": "LastName",
+                  "type": "string",
+                  "value": "c"
+                },
+                {
+                  "key": "Department",
+                  "type": "string",
+                  "value": "d"
+                },
+                {
+                  "key": "Location",
+                  "type": "string",
+                  "value": "e"
+                }
+              ],
+              "rows": {
+                "rows_matching_criteria": true,
+                "where_clause": "EmpID = 4 AND FirstName = \"Dhar\""
+              },
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B7PGTYFOD552nv5UQMpDOXOUI2CvFfIDM",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B7PGTZMCOQ84blKqWVNkZtqqOqc6t5hAj",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B72OE41T6F62Nvus3tNY9OiF0tVIPKLC9.output.row_count$",
+                    "operator": "eq",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7PGU0PHQUZ6Va2wAAiqEVe5ft7s8KOji",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table - Zero Row - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B7PGU1MRCXU78zTPMSjYkt5q3qyqXkvSo",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B72OE41T6F62Nvus3tNY9OiF0tVIPKLC9.output.row_count$",
+                    "operator": "ne",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7PGU2UY0PE2Nh4V8gds7HH2PalVeUu8G",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table - Zero Row - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B7WSJ9Z33X744ADVhc3Kuw3MNdziZj2sw",
+            "name": "Update Row in Table",
+            "title": "Update Row in Table -Same Row as Table",
+            "type": "core.updaterowintable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "columns": [
+                {
+                  "column_name": "a",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "b",
+                  "column_type": "string"
+                }
+              ],
+              "continue_on_failure": true,
+              "display_name": "Update Row in Table -Same Row as Table",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa$",
+              "row": [
+                {
+                  "key": "a",
+                  "type": "string",
+                  "value": " $workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa[0].a$"
+                },
+                {
+                  "key": "b",
+                  "type": "string",
+                  "value": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa[0].b$"
+                }
+              ],
+              "rows": {
+                "all_rows": true,
+                "rows_matching_criteria": false
+              },
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B7WZ0F6NT3X2XvKCZGZ4YrKCy8OEeoTsE",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B7WZ0GRRS4H31iCCL1PqeU9cAc8KO25Eq",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B7WSJ9Z33X744ADVhc3Kuw3MNdziZj2sw.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7WZ0HT164X7S8f5Ljo5o7uF8Lk1xQHID",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table -Same Row as Table - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B7WZ0ISFS1V6yOLUGgZZ9WXr38uNi7xBm",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B72OE41T6F62Nvus3tNY9OiF0tVIPKLC9.output.row_count$",
+                    "operator": "ne",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7WZ0JX4O164mYEReKIIM8oSohJd1yJ2q",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Update Row in Table -Same Row as Table - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B7V8OI8HRWN3tixYEMithk4D2Aso3BcKQ",
+        "name": "Group",
+        "title": "Delete from Table",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Delete from Table",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B731U9QGYN33XMWZWmeQtvCsuG2QjjuuK",
+            "name": "Delete from Table",
+            "title": "Delete from Table - Invalid Query",
+            "type": "core.deleterowfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Delete from Table - Invalid Query",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d$",
+              "rows": {
+                "rows_matching_criteria": true,
+                "where_clause": "EmpID IN (1,3)"
+              },
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B7VACXI5N211tb3dxESwlQ9wRH88RNb16",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B7VACYSTUZB6PoJB31IOGGLfraAmjj73W",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B731U9QGYN33XMWZWmeQtvCsuG2QjjuuK.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7VACZU1K5D5qZlAmZlNrMaMzvL5EWqHS",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Delete from Table - Invalid Query - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B7VAD0TMVXX2ElqpXTJkLfUi9DAdyyPQh",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B731U9QGYN33XMWZWmeQtvCsuG2QjjuuK.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7VAD224MQ52DheK5fupsIGKulbccukSE",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Delete from Table - Invalid Query - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B7VH84BFFBA61ntCHvzd19ROxO5ShQ492",
+            "name": "Delete from Table",
+            "title": "Delete from Table - Zero Row",
+            "type": "core.deleterowfromtable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Delete from Table - Zero Row",
+              "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d$",
+              "rows": {
+                "rows_matching_criteria": true,
+                "where_clause": "EmpID = 4 AND FirstName = \"Dhar\""
+              },
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B7VIWMJJS7A6olJLVL52VScW6mB5oeb8j",
+            "name": "Condition Block",
+            "title": "Condition Block",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": true,
+              "display_name": "Condition Block",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01B7VIWO2YUEH3dXrYNefUsQse66ixcCjIo",
+                "name": "Condition Branch",
+                "title": "IF Pass",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B7VH84BFFBA61ntCHvzd19ROxO5ShQ492.output.row_count$",
+                    "operator": "eq",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Pass",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7VIWP8GNTO2cS4utazgnXUbg58upjdPN",
+                    "name": "Add Row to Table",
+                    "title": "Update Succeeded Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Succeeded Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MAJLAD3D5qwuEqWEtGSi5fwqbtlXgP$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Delete from Table - Zero Row - Pass"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01B7VIWQE76A371EihHnpg9NyjhnCxAxF3r",
+                "name": "Condition Branch",
+                "title": "IF Fail",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01B7VH84BFFBA61ntCHvzd19ROxO5ShQ492.output.row_count$",
+                    "operator": "ne",
+                    "right_operand": 0
+                  },
+                  "continue_on_failure": true,
+                  "display_name": "IF Fail",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B7VIWRKFKU750UtkTq8JNeGUbNf5w7mhH",
+                    "name": "Add Row to Table",
+                    "title": "Update Failed Tests Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Update Failed Tests Table",
+                      "input_table": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.local.variable_workflow_01B60MV9IENA61ISLN9b2wG9NYR5eNjZwuE$",
+                      "row": [
+                        {
+                          "key": "Testcase",
+                          "type": "string",
+                          "value": "Delete from Table - Zero Row - Fail"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01BAAF0C02SEI6IVQCbeUfK9RgDNy8ACDVG",
+        "name": "Set Variables",
+        "title": "Format For Email",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "display_name": "Format For Email",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01B5ZN3B4N5B55neZbAiP2tm967KaGzVIFo.output.variable_workflow_01BAAEVXHLVNY2HwPS6PmhY56IrSaOs2aia$",
+              "variable_value_new": "Activity Name                        Pass/Fail\n--------------------------------------------------------------------------------------\n\nRead Table From Text:  $activity.definition_activity_01B60Q6OELG6R4ZZ3OBFY2EIKt22JHCYmb0.output.succeeded$\n\nRead Table from JSON:  $activity.definition_activity_01B6588NX0N235B6ocglmEkDDs8Mp17Rd3P.output.succeeded$\n\nRead Table from XML:  $activity.definition_activity_01B65KBDZQTMQ01d2xRqUu6A9VM9KwsKRtJ.output.succeeded$\n\nSelect from Table - Invalid Query:  $activity.definition_activity_01B70WT2B67G93wT1y2e11qFlGhepIopiDS.output.succeeded$\n\nSelect from Table - Zero Row:   $activity.definition_activity_01B71VOZ3I0I63qjcWRQKJt9WZg4OLcyGPT.output.succeeded$\n\nAdd Row to Table - Same row as Table:  $activity.definition_activity_01B7X43GVIYSU0nUb3WLdECQCH9JoZqUJpG.output.succeeded$\n\nUpdate Row in Table - Invalid Query: $activity.definition_activity_01B7PL5N1K7B76QCKfc7bGuNCvWjzsRARV7.output.succeeded$\n\nUpdate Row in Table - Zero Row:  $activity.definition_activity_01B72OE41T6F62Nvus3tNY9OiF0tVIPKLC9.output.succeeded$\n\nUpdate Row in Table -Same Row as Table:  $activity.definition_activity_01B7WSJ9Z33X744ADVhc3Kuw3MNdziZj2sw.output.succeeded$\n\nDelete from Table - Invalid Query:  $activity.definition_activity_01B731U9QGYN33XMWZWmeQtvCsuG2QjjuuK.output.succeeded$\n\nDelete from Table - Zero Row:  $activity.definition_activity_01B7VH84BFFBA61ntCHvzd19ROxO5ShQ492.output.succeeded$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH": {
+      "unique_name": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
+      "data_type": "datatype.tabletype",
+      "display_name": "Succeeded Test Cases",
+      "columns": [
+        {
+          "name": "Testcase",
+          "title": "Testcase",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01B4D37673D847V5NWPEMI7nIVi1jRlg5Fd": {
+      "unique_name": "tabletype_01B4D37673D847V5NWPEMI7nIVi1jRlg5Fd",
+      "data_type": "datatype.tabletype",
+      "display_name": "Int_String_table",
+      "columns": [
+        {
+          "name": "Location",
+          "title": "Location",
+          "type": "string"
+        },
+        {
+          "name": "Department",
+          "title": "Department",
+          "type": "string"
+        },
+        {
+          "name": "EmpID",
+          "title": "EmpID",
+          "type": "integer"
+        },
+        {
+          "name": "FirstName",
+          "title": "FirstName",
+          "type": "string"
+        },
+        {
+          "name": "LastName",
+          "title": "LastName",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01B677O215EYB2VKFwoQ66fX9GlloITIRnL": {
+      "unique_name": "tabletype_01B677O215EYB2VKFwoQ66fX9GlloITIRnL",
+      "data_type": "datatype.tabletype",
+      "display_name": "SingleIntTable",
+      "columns": [
+        {
+          "name": "IntVal",
+          "title": "IntVal",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01B6TU1D99D0N5uOhHImI7qmGOzOVOGjrzC": {
+      "unique_name": "tabletype_01B6TU1D99D0N5uOhHImI7qmGOzOVOGjrzC",
+      "data_type": "datatype.tabletype",
+      "display_name": "TwoColumnString",
+      "columns": [
+        {
+          "name": "a",
+          "title": "a",
+          "type": "string"
+        },
+        {
+          "name": "b",
+          "title": "b",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}

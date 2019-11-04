@@ -11,18 +11,6 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "Results",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01B1XCYMW8PHS7bRxxwYzkKLuA14a2XG680",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
           "name": "AddToRowStatus",
           "type": "datatype.string",
           "is_required": false
@@ -61,6 +49,18 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01B159CHVDUG05oGkRpNBj1QDAg81E4g5ih",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Results",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B1XCYMW8PHS7bRxxwYzkKLuA14a2XG680",
         "object_type": "variable_workflow"
       }
     ],
@@ -220,13 +220,13 @@
           {
             "unique_name": "definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy",
             "name": "Select from Table",
-            "title": "Select from Table",
+            "title": "Select from Table - All rows",
             "type": "core.selectfromtable",
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
               "continue_on_failure": true,
-              "display_name": "Select from Table",
+              "display_name": "Select from Table - All rows",
               "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
               "number_of_rows": {
                 "all_rows": true,
@@ -1174,12 +1174,12 @@
       {
         "unique_name": "definition_activity_01B3XF3GVRNY466qvdSXdI2vTBH5YAOFTKW",
         "name": "Group",
-        "title": "Delete From Table",
+        "title": "Delete  Select From Table",
         "type": "logic.group",
         "base_type": "activity",
         "properties": {
           "continue_on_failure": true,
-          "display_name": "Delete From Table",
+          "display_name": "Delete  Select From Table",
           "skip_execution": false
         },
         "object_type": "definition_activity",
@@ -1206,7 +1206,7 @@
           {
             "unique_name": "definition_activity_01B3XFFQGHO544eQeDWPusUDPbdJeWS75pX",
             "name": "Select from Table",
-            "title": "Select the Updated Row",
+            "title": "Select the Updated Row -Specific Row",
             "type": "core.selectfromtable",
             "base_type": "activity",
             "properties": {
@@ -1234,7 +1234,7 @@
                 }
               ],
               "continue_on_failure": true,
-              "display_name": "Select the Updated Row",
+              "display_name": "Select the Updated Row -Specific Row",
               "input_table": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.local.variable_workflow_01B159CHVE0N82vZHQAgrVrgrDmnI9G7oN4$",
               "number_of_rows": {
                 "all_rows": true,
@@ -1470,7 +1470,7 @@
           "variables_to_update": [
             {
               "variable_to_update": "$workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.output.variable_workflow_01B1XCYMW8PHS7bRxxwYzkKLuA14a2XG680$",
-              "variable_value_new": "Activity Name                        Pass/Fail\n--------------------------------------------------------------------------------------\n\nRead Table From Text :   $activity.definition_activity_01B159IHMOMAY6KdgA6T3BxTCFBe2B3MB6M.output.succeeded$\n\nAdd Row To Table :   $workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.output.variable_workflow_01B4AOHM4ZS9I5cn01l68jBFlCKvRNEqXsK$\n \nSelect From Table:   $activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.succeeded$\n\nRead Table From JSON:  $activity.definition_activity_01B159NVQWDU75ggt5ZtD94XzWzpQufJNuI.output.succeeded$\n\nRead Table From XML:  $activity.definition_activity_01B159X4GCIYJ7OvhUWQcmFmu8p3k0DnbnR.output.succeeded$\n\nUpdate Row in Table:   $activity.definition_activity_01B1QQTLPWDVA09LhTCHJLOY0VLewOw8T3G.output.succeeded$\n\nDelete From Table:   $activity.definition_activity_01B1XHWUA3BJ066GzMtG6RfyyCzKvoGbcPr.output.succeeded$"
+              "variable_value_new": "Activity Name                        Pass/Fail\n--------------------------------------------------------------------------------------\n\nRead Table From Text :   $activity.definition_activity_01B159IHMOMAY6KdgA6T3BxTCFBe2B3MB6M.output.succeeded$\n\nAdd Row To Table :   $workflow.definition_workflow_01B159CITS10E1eMzyFjeLVYTTi6lpQaphw.output.variable_workflow_01B4AOHM4ZS9I5cn01l68jBFlCKvRNEqXsK$\n \nSelect From Table Select from Table - All rows:   $activity.definition_activity_01B159LIHV6GE1VEVjjdotHG4A8RZNuZmFy.output.succeeded$\n\nRead Table From JSON:  $activity.definition_activity_01B159NVQWDU75ggt5ZtD94XzWzpQufJNuI.output.succeeded$\n\nRead Table From XML:  $activity.definition_activity_01B159X4GCIYJ7OvhUWQcmFmu8p3k0DnbnR.output.succeeded$\n\nUpdate Row in Table:   $activity.definition_activity_01B1QQTLPWDVA09LhTCHJLOY0VLewOw8T3G.output.succeeded$\n\nDelete From Table:   $activity.definition_activity_01B1XHWUA3BJ066GzMtG6RfyyCzKvoGbcPr.output.succeeded$\n\nSelect the Updated Row -Specific Row:  $activity.definition_activity_01B3XFFQGHO544eQeDWPusUDPbdJeWS75pX.output.succeeded$"
             }
           ]
         },
@@ -1502,11 +1502,6 @@
       "display_name": "Multiple Column Table",
       "columns": [
         {
-          "name": "Location",
-          "title": "Location",
-          "type": "string"
-        },
-        {
           "name": "Deppartment",
           "title": "Department",
           "type": "string"
@@ -1524,6 +1519,11 @@
         {
           "name": "LastName",
           "title": "Last Name",
+          "type": "string"
+        },
+        {
+          "name": "Location",
+          "title": "Location",
           "type": "string"
         }
       ],

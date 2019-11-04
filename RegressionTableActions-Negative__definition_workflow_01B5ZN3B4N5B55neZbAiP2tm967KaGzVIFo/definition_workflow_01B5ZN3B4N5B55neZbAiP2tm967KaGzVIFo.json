@@ -13,6 +13,78 @@
             {
               "column_data": {
                 "Department": "Test",
+                "EmpID": 1,
+                "FirstName": "John",
+                "LastName": "Kelly",
+                "Location": "Pune"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Dev",
+                "EmpID": 2,
+                "FirstName": "Mohan",
+                "LastName": "Kumar",
+                "Location": "Delhi"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Prod",
+                "EmpID": 3,
+                "FirstName": "Cheval",
+                "LastName": "Murti",
+                "Location": "Hyderabad"
+              }
+            },
+            {
+              "column_data": {
+                "Department": "Manager",
+                "EmpID": 4,
+                "FirstName": "Dharma",
+                "LastName": "Burma",
+                "Location": "Pune"
+              }
+            }
+          ],
+          "scope": "local",
+          "name": "TestStringTable",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01B6TU1D99D0N5uOhHImI7qmGOzOVOGjrzC",
+        "properties": {
+          "scope": "local",
+          "name": "TestStringTableTwoRows",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Results",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BAAEVXHLVNY2HwPS6PmhY56IrSaOs2aia",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01B4D37673D847V5NWPEMI7nIVi1jRlg5Fd",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Department": "Test",
                 "EmpID": 101,
                 "FirstName": "One",
                 "LastName": "One",
@@ -89,78 +161,6 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01B677W6VYLU01oz2p4uiEkAP3KwdB5U2JH",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01B4D37673D847V5NWPEMI7nIVi1jRlg5Fd",
-        "properties": {
-          "value": [
-            {
-              "column_data": {
-                "Department": "Test",
-                "EmpID": 1,
-                "FirstName": "John",
-                "LastName": "Kelly",
-                "Location": "Pune"
-              }
-            },
-            {
-              "column_data": {
-                "Department": "Dev",
-                "EmpID": 2,
-                "FirstName": "Mohan",
-                "LastName": "Kumar",
-                "Location": "Delhi"
-              }
-            },
-            {
-              "column_data": {
-                "Department": "Prod",
-                "EmpID": 3,
-                "FirstName": "Cheval",
-                "LastName": "Murti",
-                "Location": "Hyderabad"
-              }
-            },
-            {
-              "column_data": {
-                "Department": "Manager",
-                "EmpID": 4,
-                "FirstName": "Dharma",
-                "LastName": "Burma",
-                "Location": "Pune"
-              }
-            }
-          ],
-          "scope": "local",
-          "name": "TestStringTable",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01B67D4BGW2JZ0ZsxNl40qgJS7ZBh0nte5d",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01B6TU1D99D0N5uOhHImI7qmGOzOVOGjrzC",
-        "properties": {
-          "scope": "local",
-          "name": "TestStringTableTwoRows",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01B7WWAWAZJJM7DSHtl2wXamNo1xoyXfQSa",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Results",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BAAEVXHLVNY2HwPS6PmhY56IrSaOs2aia",
         "object_type": "variable_workflow"
       }
     ],
@@ -1864,13 +1864,13 @@
       "display_name": "TwoColumnString",
       "columns": [
         {
-          "name": "a",
-          "title": "a",
+          "name": "b",
+          "title": "b",
           "type": "string"
         },
         {
-          "name": "b",
-          "title": "b",
+          "name": "a",
+          "title": "a",
           "type": "string"
         }
       ],
